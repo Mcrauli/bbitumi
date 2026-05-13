@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BBITUMI – Premium bitumi- ja infrakorjaukset koko Etelä-Suomeen. Erikoisbitumityöt, asfalttikorjaukset ja vedeneristykset ammattitaidolla." />
+  <meta name="keywords" content="bitumi, asfaltti, infrakorjaukset, vedeneristys, bitumijuotos, asfalttikorjaus, Etelä-Suomi, Helsinki, Espoo, Vantaa" />
+  <meta property="og:title" content="BBITUMI – Premium infrakorjaukset" />
+  <meta property="og:description" content="Erikoisbitumityöt, asfalttikorjaukset ja vedeneristykset ammattitaidolla koko Etelä-Suomeen." />
+  <title>BBITUMI – Premium infrakorjaukset</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Manrope:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================
+       DESIGN TOKENS
+    ============================================ */
+    :root {
+      --bg:           #111111;
+      --bg2:          #1C1C1C;
+      --bg3:          #161616;
+      --accent:       #F97316;
+      --accent-dim:   rgba(249,115,22,0.12);
+      --accent-hover: #EA6C0A;
+      --cream:        #F7F7F5;
+      --muted:        #888888;
+      --border:       rgba(255,255,255,0.07);
+      --border-warm:  rgba(249,115,22,0.25);
+
+      --font-display: 'Manrope', sans-serif;
+      --font-body:    'Inter', sans-serif;
+
+      --ease:         cubic-bezier(0.4, 0, 0.2, 1);
+      --ease-out:     cubic-bezier(0, 0, 0.2, 1);
+      --t:            0.3s;
+      --t-slow:       0.7s;
+    }
+
+    /* ============================================
+       RESET
+    ============================================ */
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--cream);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    a { text-decoration:none; color:inherit; }
+    img { max-width:100%; display:block; }
+    button { border:none; background:none; cursor:pointer; font:inherit; color:inherit; }
+
+    ::-webkit-scrollbar { width:4px; }
+    ::-webkit-scrollbar-track { background:var(--bg); }
+    ::-webkit-scrollbar-thumb { background:var(--accent); border-radius:2px; }
+
+    /* ============================================
+       LAYOUT
+    ============================================ */
+    .container {
+      width: min(1280px, 92%);
+      margin: 0 auto;
+    }
+
+    /* ============================================
+       REVEAL ANIMATIONS
+    ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+    }
+    .reveal.in { opacity:1; transform:translateY(0); }
+
+    .reveal-left  { opacity:0; transform:translateX(-40px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
+    .reveal-left.in  { opacity:1; transform:translateX(0); }
+    .reveal-right { opacity:0; transform:translateX(40px);  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
+    .reveal-right.in { opacity:1; transform:translateX(0); }
+
+    .d1 { transition-delay:0.1s; }
+    .d2 { transition-delay:0.2s; }
+    .d3 { transition-delay:0.3s; }
+    .d4 { transition-delay:0.4s; }
+    .d5 { transition-delay:0.5s; }
+    .d6 { transition-delay:0.6s; }
+
+    /* ============================================
+       NAVBAR
+    ============================================ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 900;
+      transition: background var(--t) var(--ease), border-color var(--t) var(--ease);
+      border-bottom: 1px solid transparent;
+    }
+
+    .navbar.scrolled {
+      background: rgba(17,17,17,0.94);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom-color: var(--border);
+    }
+
+    .nav-inner {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+    .logo .o { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .nav-links > a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.3px;
+      transition: color var(--t) var(--ease);
+      position: relative;
+    }
+    .nav-links > a:not(.nav-cta)::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width var(--t) var(--ease);
+    }
+    .nav-links > a:not(.nav-cta):hover { color: var(--cream); }
+    .nav-links > a:not(.nav-cta):hover::after { width: 100%; }
+
+    .nav-cta {
+      padding: 11px 22px;
+      background: var(--accent);
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #fff !important;
+      transition: background var(--t), transform var(--t), box-shadow var(--t);
+    }
+    .nav-cta:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(249,115,22,0.35);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 6px;
+      cursor: pointer;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--cream);
+      transition: var(--t) var(--ease);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .mob-menu {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      position: fixed;
+      top: 80px;
+      left: 0;
+      right: 0;
+      background: rgba(17,17,17,0.97);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      z-index: 899;
+      padding: 12px 0 24px;
+    }
+    .mob-menu.open { display: flex; }
+    .mob-menu a {
+      padding: 16px 5%;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      transition: color var(--t);
+    }
+    .mob-menu a:hover { color: var(--cream); }
+    .mob-menu .mob-cta {
+      margin: 20px 5% 0;
+      text-align: center;
+      padding: 16px;
+      background: var(--accent);
+      border-radius: 999px;
+      color: #fff !important;
+      font-weight: 600;
+      border: none;
+    }
+
+    /* ============================================
+       HERO
+    ============================================ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(32%) saturate(60%);
+    }
+
+    /* Grain overlay */
+    .hero-grain {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      opacity: 0.4;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        135deg,
+        rgba(0,0,0,0.75) 0%,
+        rgba(0,0,0,0.35) 60%,
+        rgba(0,0,0,0.6) 100%
+      );
+    }
+
+    .hero-fade-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 280px;
+      z-index: 2;
+      background: linear-gradient(to top, var(--bg) 0%, transparent 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      padding: 160px 0 140px;
+      max-width: 920px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      border: 1px solid rgba(249,115,22,0.35);
+      border-radius: 999px;
+      background: rgba(249,115,22,0.07);
+      margin-bottom: 36px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .pulse-dot::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.25;
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { transform:scale(1); opacity:0.25; }
+      50%      { transform:scale(2); opacity:0; }
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7.5vw, 7.2rem);
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -3px;
+      color: var(--cream);
+      margin-bottom: 32px;
+    }
+    .hero h1 .highlight { color: var(--accent); }
+
+    .hero-sub {
+      max-width: 580px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #a8a8a8;
+      font-weight: 300;
+      margin-bottom: 52px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 32px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background var(--t), transform var(--t), box-shadow var(--t);
+    }
+    .btn-primary svg { transition: transform 0.3s var(--ease); }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 36px rgba(249,115,22,0.4);
+    }
+    .btn-primary:hover svg { transform: translateX(4px); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 32px;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--cream);
+      border-radius: 999px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: border-color var(--t), background var(--t), color var(--t);
+    }
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .scroll-track {
+      width: 1px;
+      height: 52px;
+      position: relative;
+      overflow: hidden;
+      background: rgba(255,255,255,0.08);
+    }
+    .scroll-track::after {
+      content: '';
+      position: absolute;
+      top: -52px;
+      left: 0;
+      width: 1px;
+      height: 52px;
+      background: var(--accent);
+      animation: scrollDown 2s ease-in-out infinite;
+    }
+    @keyframes scrollDown {
+      0%   { top: -52px; }
+      100% { top: 52px; }
+    }
+
+    /* ============================================
+       STATS
+    ============================================ */
+    .stats {
+      padding: 0 0 96px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .stat-card {
+      padding: 44px 36px;
+      border-right: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      transition: background var(--t);
+    }
+    .stat-card:last-child { border-right: none; }
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--t-slow) var(--ease);
+    }
+    .stat-card:hover { background: #202020; }
+    .stat-card:hover::before { transform: scaleX(1); }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 3.2rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+      letter-spacing: -2px;
+      margin-bottom: 12px;
+    }
+
+    .stat-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 160px;
+    }
+
+    /* ============================================
+       SECTION LABELS
+    ============================================ */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .section-h {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+      font-weight: 900;
+      line-height: 1.0;
+      letter-spacing: -2px;
+      color: var(--cream);
+    }
+    .section-h .hl { color: var(--accent); }
+
+    .section-p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.8;
+      font-weight: 300;
+      max-width: 460px;
+      margin-top: 20px;
+    }
+
+    /* ============================================
+       SERVICES
+    ============================================ */
+    .services {
+      padding: 96px 0;
+      background: var(--bg);
+    }
+
+    .services-header {
+      margin-bottom: 72px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .svc {
+      background: var(--bg);
+      padding: 44px 38px 36px;
+      position: relative;
+      overflow: hidden;
+      transition: background var(--t);
+    }
+    .svc::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(249,115,22,0.03);
+      opacity: 0;
+      transition: opacity var(--t);
+    }
+    .svc:hover { background: #181818; }
+    .svc:hover::after { opacity: 1; }
+
+    .svc-index {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--accent);
+      opacity: 0.5;
+      margin-bottom: 20px;
+    }
+
+    .svc-icon {
+      width: 44px;
+      height: 44px;
+      color: var(--accent);
+      margin-bottom: 20px;
+      transition: transform var(--t);
+    }
+    .svc:hover .svc-icon { transform: scale(1.1); }
+
+    .svc-name {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--cream);
+      margin-bottom: 14px;
+    }
+
+    .svc-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .svc-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: opacity var(--t), transform var(--t);
+    }
+    .svc:hover .svc-link { opacity: 1; transform: translateX(0); }
+
+    /* ============================================
+       WHY BBITUMI
+    ============================================ */
+    .why {
+      padding: 96px 0;
+      background: var(--bg2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-bg-text {
+      position: absolute;
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-display);
+      font-size: clamp(6rem, 16vw, 16rem);
+      font-weight: 900;
+      color: rgba(255,255,255,0.022);
+      letter-spacing: -8px;
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 88px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .why-left p {
+      margin-top: 28px;
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.85;
+      font-weight: 300;
+    }
+
+    .why-features {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .feat {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      transition: padding-left var(--t);
+    }
+    .feat:first-child { border-top: 1px solid var(--border); }
+    .feat:hover { padding-left: 6px; }
+
+    .feat-ico {
+      width: 38px;
+      height: 38px;
+      min-width: 38px;
+      background: var(--accent-dim);
+      border: 1px solid var(--border-warm);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      margin-top: 2px;
+    }
+
+    .feat-body h4 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--cream);
+      margin-bottom: 5px;
+    }
+    .feat-body p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ============================================
+       REFERENSSIT
+    ============================================ */
+    .refs {
+      padding: 96px 0;
+      background: var(--bg);
+    }
+
+    .refs-top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 72px;
+      gap: 40px;
+    }
+
+    .refs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .ref-card {
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      transition: border-color var(--t), transform var(--t-slow), box-shadow var(--t-slow);
+      cursor: pointer;
+    }
+    .ref-card:hover {
+      border-color: var(--border-warm);
+      transform: translateY(-5px);
+      box-shadow: 0 28px 56px rgba(0,0,0,0.45);
+    }
+    .ref-card.span2 { grid-column: span 2; }
+
+    .ref-thumb {
+      position: relative;
+      overflow: hidden;
+    }
+    .ref-card .ref-thumb      { height: 260px; }
+    .ref-card.span2 .ref-thumb { height: 360px; }
+
+    .ref-bg {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.7s var(--ease-out);
+    }
+    .ref-card:hover .ref-bg { transform: scale(1.04); }
+
+    /* Industrial placeholder backgrounds */
+    .ref-bg-a {
+      background:
+        radial-gradient(ellipse at 25% 65%, #2d200e 0%, #1a1208 50%, #0d0d0d 100%),
+        repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,255,255,0.008) 3px, rgba(255,255,255,0.008) 4px);
+      background-blend-mode: normal, overlay;
+    }
+    .ref-bg-b {
+      background:
+        radial-gradient(ellipse at 70% 30%, #0e1828 0%, #0a1020 50%, #0d0d0d 100%);
+    }
+    .ref-bg-c {
+      background:
+        radial-gradient(ellipse at 50% 50%, #1a1a1a 0%, #101010 60%, #0c0c0c 100%);
+    }
+    .ref-bg-d {
+      background:
+        radial-gradient(ellipse at 80% 70%, #1c1208 0%, #141008 50%, #0d0d0d 100%);
+    }
+
+    .ref-grad {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
+    }
+
+    .ref-pill {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      padding: 5px 13px;
+      background: rgba(0,0,0,0.72);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      backdrop-filter: blur(8px);
+    }
+
+    .ref-body {
+      padding: 28px 30px 30px;
+    }
+
+    .ref-loc {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .ref-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+
+    .ref-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .ref-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .ref-tag {
+      padding: 4px 11px;
+      background: var(--accent-dim);
+      border: 1px solid var(--border-warm);
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ============================================
+       CTA BAND
+    ============================================ */
+    .cta-band {
+      padding: 96px 0;
+      background: var(--bg2);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      top: -160px; right: -160px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(249,115,22,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-band::after {
+      content: '';
+      position: absolute;
+      bottom: -120px; left: -120px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(249,115,22,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .cta-inner .section-label { justify-content: center; }
+    .cta-inner .section-h  { text-align: center; }
+    .cta-inner .section-p  { text-align: center; margin: 24px auto 0; }
+
+    .cta-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 44px;
+    }
+
+    .cta-contacts {
+      display: flex;
+      gap: 0;
+      justify-content: center;
+      margin-top: 60px;
+      border-top: 1px solid var(--border);
+      padding-top: 48px;
+    }
+
+    .cc-item {
+      flex: 1;
+      max-width: 240px;
+      text-align: center;
+      padding: 0 32px;
+      border-right: 1px solid var(--border);
+    }
+    .cc-item:last-child { border-right: none; }
+
+    .cc-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .cc-val {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--cream);
+      transition: color var(--t);
+    }
+    .cc-val:hover { color: var(--accent); }
+
+    /* ============================================
+       FOOTER
+    ============================================ */
+    .footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 72px 0 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand .logo {
+      display: block;
+      margin-bottom: 18px;
+    }
+    .footer-brand p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 260px;
+    }
+
+    .footer-col h6 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 20px;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-col ul li a {
+      font-size: 0.875rem;
+      color: var(--muted);
+      transition: color var(--t);
+    }
+    .footer-col ul li a:hover { color: var(--cream); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .footer-bottom .acc { color: var(--accent); }
+
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-grid      { gap: 56px; }
+      .footer-grid   { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links  { display: none; }
+      .hamburger  { display: flex; }
+
+      .stats-grid    { grid-template-columns: 1fr 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .why-grid      { grid-template-columns: 1fr; gap: 48px; }
+      .why-bg-text   { display: none; }
+      .refs-grid     { grid-template-columns: 1fr; }
+      .ref-card.span2 { grid-column: span 1; }
+      .refs-top      { flex-direction: column; align-items: flex-start; }
+      .cta-contacts  { flex-direction: column; align-items: center; gap: 28px; }
+      .cc-item       { border-right: none; border-bottom: 1px solid var(--border); padding: 0 0 28px; max-width: 100%; }
+      .cc-item:last-child { border-bottom: none; padding-bottom: 0; }
+      .footer-grid   { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    }
+
+    @media (max-width: 520px) {
+      .hero h1      { letter-spacing: -2px; }
+      .hero-actions { flex-direction: column; }
+      .btn-primary, .btn-ghost { justify-content: center; }
+      .stats-grid   { grid-template-columns: 1fr; }
+      .cta-btns     { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════ NAVBAR ════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">BB<span class="o">I</span>TUMI</a>
+
+      <div class="nav-links">
+        <a href="#palvelut">Palvelut</a>
+        <a href="#miksi">Miksi BBITUMI</a>
+        <a href="#referenssit">Referenssit</a>
+        <a href="#yhteystiedot">Yhteystiedot</a>
+        <a href="#yhteystiedot" class="nav-cta">Pyydä tarjous</a>
+      </div>
+
+      <div class="hamburger" id="ham" aria-label="Valikko">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mob-menu" id="mobMenu">
+    <a href="#palvelut">Palvelut</a>
+    <a href="#miksi">Miksi BBITUMI</a>
+    <a href="#referenssit">Referenssit</a>
+    <a href="#yhteystiedot">Yhteystiedot</a>
+    <a href="#yhteystiedot" class="mob-cta">Pyydä tarjous</a>
+  </div>
+
+  <!-- ════════════════════ HERO ════════════════════ -->
+  <section class="hero" id="hero">
+    <video autoplay muted loop playsinline class="hero-video" aria-hidden="true">
+      <source src="hero-video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-grain" aria-hidden="true"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-fade-bottom" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">
+          <div class="pulse-dot" aria-hidden="true"></div>
+          Premium infrakorjaukset &middot; Etelä-Suomi
+        </div>
+
+        <h1>
+          Kestävät bitumi-<br>
+          ja <span class="highlight">infrakorjaukset</span><br>
+          vaativiin kohteisiin.
+        </h1>
+
+        <p class="hero-sub">
+          Erikoisbitumityöt, asfalttikorjaukset ja vedeneristykset
+          ammattitaidolla taloyhtiöille, yrityksille ja infrakohteisiin.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#yhteystiedot" class="btn-primary">
+            Pyydä tarjous
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#referenssit" class="btn-ghost">Katso referenssit</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <div class="scroll-track"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ STATS ════════════════════ -->
+  <section class="stats" aria-label="Tilastot">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-num" data-target="20">0</div>
+          <div class="stat-desc">Vuotta kokemusta bitumi- ja infrakorjauksista</div>
+        </div>
+        <div class="stat-card reveal d1">
+          <div class="stat-num" data-target="500">0</div>
+          <div class="stat-desc">Onnistunutta projektia eri kohteissa</div>
+        </div>
+        <div class="stat-card reveal d2">
+          <div class="stat-num">100%</div>
+          <div class="stat-desc">Aidolla ammattikalustolla toteutetut työmaat</div>
+        </div>
+        <div class="stat-card reveal d3">
+          <div class="stat-num" style="font-size:1.8rem;letter-spacing:-1px;">Etelä-<br>Suomi</div>
+          <div class="stat-desc">Koko Etelä-Suomen palvelualue</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ SERVICES ════════════════════ -->
+  <section class="services" id="palvelut">
+    <div class="container">
+      <div class="services-header">
+        <div class="section-label reveal">Palvelut</div>
+        <h2 class="section-h reveal d1">
+          Kaikki vaativan<br>infrakorjauksen<br><span class="hl">osaamisalat.</span>
+        </h2>
+        <p class="section-p reveal d2">
+          Erikoistuneet bitumityöt ja infrakorjaukset ammattitaidolla —
+          pienistä kohteista vaativiin infrastruktuuriprojekteihin.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="svc reveal">
+          <div class="svc-index">01</div>
+          <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="6" y="32" width="36" height="8" rx="1"/>
+            <path d="M12 32V24M20 32V18M28 32V22M36 32V26"/>
+            <circle cx="12" cy="18" r="4"/><circle cx="20" cy="12" r="4"/>
+            <circle cx="28" cy="16" r="4"/><circle cx="36" cy="20" r="4"/>
+          </svg>
+          <div class="svc-name">Kuumabitumijuotokset</div>
+          <div class="svc-desc">Saumajuotokset ja halkeamien täyttö kuumabitumimassoilla. Kestävä ratkaisu asfaltti- ja betonipintojen korjaukseen.</div>
+          <div class="svc-link">Lue lisää <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+
+        <div class="svc reveal d1">
+          <div class="svc-index">02</div>
+          <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M4 40 L44 40"/>
+            <path d="M4 40 L4 28 Q14 16 24 26 Q34 36 44 24 L44 40"/>
+            <path d="M4 28 Q14 14 24 22" stroke-dasharray="3 3" opacity="0.5"/>
+          </svg>
+          <div class="svc-name">Asfalttihalkeamien korjaus</div>
+          <div class="svc-desc">Pitkäkestoiset halkeamakorjaukset erikoismateriaaleilla. Estämme veden tunkeutumisen rakenteisiin tehokkaasti.</div>
+          <div class="svc-link">Lue lisää <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+
+        <div class="svc reveal d2">
+          <div class="svc-index">03</div>
+          <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="6" y="18" width="36" height="22" rx="2"/>
+            <path d="M12 18V14 Q24 6 36 14 L36 18"/>
+            <path d="M18 28 L30 28 M24 23 L24 33"/>
+          </svg>
+          <div class="svc-name">Valuasfaltti</div>
+          <div class="svc-desc">Valuasfaltti sillankansiin, pysäköintikansiin ja vaativiin kohteisiin, joissa vaaditaan täydellistä tiiveyttä.</div>
+          <div class="svc-link">Lue lisää <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+
+        <div class="svc reveal d1">
+          <div class="svc-index">04</div>
+          <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="6" y="12" width="36" height="24" rx="2"/>
+            <path d="M6 20 L42 20 M6 28 L42 28"/>
+            <path d="M16 12 L16 36 M32 12 L32 36"/>
+            <path d="M3 42 L45 42" stroke-dasharray="4 2" opacity="0.5"/>
+          </svg>
+          <div class="svc-name">Vedeneristys</div>
+          <div class="svc-desc">Kattavat vedeneristysratkaisut perustuksiin, kattoihin, siltoihin ja muihin kriittisiin rakenteisiin.</div>
+          <div class="svc-link">Lue lisää <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+
+        <div class="svc reveal d2">
+          <div class="svc-index">05</div>
+          <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M4 40 L44 40"/>
+            <rect x="6" y="30" width="9" height="10"/>
+            <rect x="19" y="24" width="9" height="16"/>
+            <rect x="32" y="33" width="9" height="7"/>
+            <path d="M6 30 L19 24 M28 24 L32 33"/>
+          </svg>
+          <div class="svc-name">Reunakivityöt</div>
+          <div class="svc-desc">Reunakivien asennus ja korjaus graniitista betonikiviin. Infrastruktuurin viimeistely laadukkaasti ja kestävästi.</div>
+          <div class="svc-link">Lue lisää <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+
+        <div class="svc reveal d3">
+          <div class="svc-index">06</div>
+          <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="24" cy="24" r="16"/>
+            <path d="M24 12 L24 24 L33 33"/>
+            <path d="M12 24 L8 24 M36 24 L40 24 M24 12 L24 8 M24 40 L24 36"/>
+          </svg>
+          <div class="svc-name">Kuntokartoitukset</div>
+          <div class="svc-desc">Ammattimainen infrastruktuurin kuntoarviointi. Selvitetään vauriot ja kustannustehokkain korjausohjelma.</div>
+          <div class="svc-link">Lue lisää <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ WHY ════════════════════ -->
+  <section class="why" id="miksi" aria-labelledby="why-heading">
+    <div class="why-bg-text" aria-hidden="true">BBITUMI</div>
+    <div class="container">
+      <div class="why-grid">
+
+        <div class="why-left">
+          <div class="section-label reveal-left">Miksi BBITUMI</div>
+          <h2 class="section-h reveal-left d1" id="why-heading">
+            Infra-ala vaatii<br>enemmän kuin<br><span class="hl">perustason.</span>
+          </h2>
+          <p class="reveal-left d2">
+            BBITUMI on perustettu vastaamaan vaativien infra- ja
+            bitumitöiden todellisiin tarpeisiin. Emme tarjoa
+            tavanomaisia ratkaisuja, vaan räätälöidymme jokaisen
+            kohteen mukaan ammattitaidolla ja oikealla kalustolla.
+          </p>
+          <p class="reveal-left d3" style="margin-top:14px; font-size:1.05rem; color:var(--muted); line-height:1.85; font-weight:300;">
+            20 vuoden kokemus on opettanut, että kestävä tulos syntyy
+            oikeista materiaaleista, oikeista menetelmistä ja oikeaan
+            aikaan tehdystä työstä.
+          </p>
+        </div>
+
+        <div class="why-features">
+
+          <div class="feat reveal-right d1">
+            <div class="feat-ico">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div class="feat-body">
+              <h4>Erikoistunut kalusto</h4>
+              <p>Oma ammattikalusto bitumitöihin — ei alihankinnan varassa.</p>
+            </div>
+          </div>
+
+          <div class="feat reveal-right d2">
+            <div class="feat-ico">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <div class="feat-body">
+              <h4>Nopea reagointi</h4>
+              <p>Tarjous 24h sisällä. Aloitus sovitussa aikataulussa.</p>
+            </div>
+          </div>
+
+          <div class="feat reveal-right d3">
+            <div class="feat-ico">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div class="feat-body">
+              <h4>Koko Etelä-Suomi</h4>
+              <p>Helsinki, Espoo, Vantaa, Tampere ja kaikki ympäryskunnat.</p>
+            </div>
+          </div>
+
+          <div class="feat reveal-right d4">
+            <div class="feat-ico">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="feat-body">
+              <h4>Laaduntarkistus &amp; takuu</h4>
+              <p>Jokainen kohde tarkastetaan valmistumisen jälkeen. Kirjallinen takuu.</p>
+            </div>
+          </div>
+
+          <div class="feat reveal-right d5">
+            <div class="feat-ico">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+              </svg>
+            </div>
+            <div class="feat-body">
+              <h4>Pitkäaikaiset asiakassuhteet</h4>
+              <p>Taloyhtiöt, kunnat ja yritykset palaavat luoksemme uusien projektien kanssa.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ REFERENSSIT ════════════════════ -->
+  <section class="refs" id="referenssit">
+    <div class="container">
+      <div class="refs-top">
+        <div>
+          <div class="section-label reveal">Referenssit</div>
+          <h2 class="section-h reveal d1">
+            Työmaat puhuvat<br><span class="hl">puolestaan.</span>
+          </h2>
+        </div>
+        <p class="section-p reveal d2" style="margin-top:0; max-width:360px;">
+          Valittuja esimerkkejä toteutetuista projekteista
+          taloyhtiöiltä siltakohteisiin.
+        </p>
+      </div>
+
+      <div class="refs-grid">
+
+        <!-- Case 1 – iso -->
+        <div class="ref-card span2 reveal">
+          <div class="ref-thumb">
+            <div class="ref-bg ref-bg-a"></div>
+            <div class="ref-grad"></div>
+            <div class="ref-pill">Valuasfaltti</div>
+          </div>
+          <div class="ref-body">
+            <div class="ref-loc">Helsinki &middot; 2024</div>
+            <div class="ref-title">Siltakannen valuasfaltti &amp; vedeneristys, Hermannin silta</div>
+            <div class="ref-desc">
+              Liikenteen alla toteutettu kokonaisvaltainen siltakansiremontti.
+              Vanha rakenne purettiin, suoritettiin täydellinen vedeneristys ja
+              valuasfalttipinnoite liikennerasituksen vaatimusten mukaisesti.
+              Projekti valmistui aikataulussa minimoiden liikenteen häiriöt.
+            </div>
+            <div class="ref-tags">
+              <span class="ref-tag">Valuasfaltti</span>
+              <span class="ref-tag">Vedeneristys</span>
+              <span class="ref-tag">Siltatekniikka</span>
+              <span class="ref-tag">Helsinki</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case 2 -->
+        <div class="ref-card reveal d1">
+          <div class="ref-thumb">
+            <div class="ref-bg ref-bg-b"></div>
+            <div class="ref-grad"></div>
+            <div class="ref-pill">Halkeamakorjaus</div>
+          </div>
+          <div class="ref-body">
+            <div class="ref-loc">Espoo &middot; 2024</div>
+            <div class="ref-title">Taloyhtiön pysäköintialueen halkeamakorjaukset</div>
+            <div class="ref-desc">
+              200+ jm halkeamia täytetty kuumabitumimassoilla.
+              Kohde toimintakunnossa jo seuraavana päivänä. Takuu 3 v.
+            </div>
+            <div class="ref-tags">
+              <span class="ref-tag">Kuumabitumijuotos</span>
+              <span class="ref-tag">Taloyhtiö</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case 3 -->
+        <div class="ref-card reveal d2">
+          <div class="ref-thumb">
+            <div class="ref-bg ref-bg-c"></div>
+            <div class="ref-grad"></div>
+            <div class="ref-pill">Kuntokartoitus</div>
+          </div>
+          <div class="ref-body">
+            <div class="ref-loc">Vantaa &middot; 2023</div>
+            <div class="ref-title">Logistiikkakeskuksen piha-alueen kuntoarvio &amp; korjaus</div>
+            <div class="ref-desc">
+              Raskaalle liikenteelle altistuneen piha-alueen täydellinen
+              kuntokartoitus ja kustannusoptimoitu korjausohjelma toteutettiin kokonaisuudessaan.
+            </div>
+            <div class="ref-tags">
+              <span class="ref-tag">Kuntokartoitus</span>
+              <span class="ref-tag">Asfalttikorjaus</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ CTA ════════════════════ -->
+  <section class="cta-band" id="yhteystiedot" aria-labelledby="cta-heading">
+    <div class="container">
+      <div class="cta-inner">
+        <div class="section-label reveal">Ota yhteyttä</div>
+        <h2 class="section-h reveal d1" id="cta-heading">
+          Valmis aloittamaan<br><span class="hl">projektin?</span>
+        </h2>
+        <p class="section-p reveal d2">
+          Pyydä ilmainen tarjous — vastaamme 24 tunnin sisällä.
+          Kaikenkokoiset kohteet, koko Etelä-Suomi.
+        </p>
+
+        <div class="cta-btns reveal d3">
+          <a href="mailto:info@bbitumi.fi" class="btn-primary">
+            Lähetä tarjouspyyntö
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="tel:+358401234567" class="btn-ghost">Soita meille</a>
+        </div>
+
+        <div class="cta-contacts reveal d4">
+          <div class="cc-item">
+            <div class="cc-label">Sähköposti</div>
+            <a href="mailto:info@bbitumi.fi" class="cc-val">info@bbitumi.fi</a>
+          </div>
+          <div class="cc-item">
+            <div class="cc-label">Puhelin</div>
+            <a href="tel:+358401234567" class="cc-val">+358 40 123 4567</a>
+          </div>
+          <div class="cc-item">
+            <div class="cc-label">Toimialue</div>
+            <div class="cc-val">Etelä-Suomi</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ FOOTER ════════════════════ -->
+  <footer class="footer" aria-label="Alatunniste">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">BB<span class="o">I</span>TUMI</a>
+          <p>Premium bitumi- ja infrakorjaukset vaativiin kohteisiin koko Etelä-Suomessa. 20+ vuoden ammattikokemus.</p>
+        </div>
+        <div class="footer-col">
+          <h6>Palvelut</h6>
+          <ul>
+            <li><a href="#palvelut">Kuumabitumijuotokset</a></li>
+            <li><a href="#palvelut">Asfalttihalkeamat</a></li>
+            <li><a href="#palvelut">Valuasfaltti</a></li>
+            <li><a href="#palvelut">Vedeneristys</a></li>
+            <li><a href="#palvelut">Reunakivityöt</a></li>
+            <li><a href="#palvelut">Kuntokartoitukset</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h6>Yritys</h6>
+          <ul>
+            <li><a href="#miksi">Miksi BBITUMI</a></li>
+            <li><a href="#referenssit">Referenssit</a></li>
+            <li><a href="#">Yritysesittely</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h6>Yhteystiedot</h6>
+          <ul>
+            <li><a href="mailto:info@bbitumi.fi">info@bbitumi.fi</a></li>
+            <li><a href="tel:+358401234567">+358 40 123 4567</a></li>
+            <li><a href="#">Helsinki · Espoo · Vantaa</a></li>
+            <li><a href="#">Tampere ja ympäristö</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 <span class="acc">BBITUMI</span>. Kaikki oikeudet pidätetään.</p>
+        <p>Premium infrakorjaukset &middot; Etelä-Suomi</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════════════ JS ════════════════════ -->
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 20);
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Mobile menu
+    const ham = document.getElementById('ham');
+    const mobMenu = document.getElementById('mobMenu');
+    ham.addEventListener('click', () => {
+      ham.classList.toggle('open');
+      mobMenu.classList.toggle('open');
+    });
+    mobMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      ham.classList.remove('open');
+      mobMenu.classList.remove('open');
+    }));
+
+    // Scroll reveal
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          ro.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => ro.observe(el));
+
+    // Counter animation
+    const co = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = parseInt(el.dataset.target, 10);
+        if (!target) return;
+        const suffix = target >= 100 ? '+' : '+';
+        let start = null;
+        const dur = 1400;
+        const step = (ts) => {
+          if (!start) start = ts;
+          const progress = Math.min((ts - start) / dur, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(eased * target) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+        co.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('[data-target]').forEach(el => co.observe(el));
+
+    // Smooth anchor scroll (for browsers without native support)
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (id === '#') return;
+        const target = document.querySelector(id);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
