@@ -160,7 +160,7 @@ section { padding: clamp(60px, 8vw, 104px) 0; }
 }
 .brand { display: flex; align-items: center; }
 .brand img { height: 76px; width: auto; }
-.nav-links { display: flex; align-items: center; gap: 30px; }
+.nav-links { display: flex; align-items: center; gap: 22px; }
 .nav-links a {
   font-family: var(--font-display);
   font-weight: 600;
@@ -170,22 +170,34 @@ section { padding: clamp(60px, 8vw, 104px) 0; }
   color: var(--text-dim);
   padding: 4px 0;
   border-bottom: 2px solid transparent;
-  transition: color var(--t), border-color var(--t);
+  transition: color var(--t), border-color var(--t), background var(--t);
 }
 .nav-links a:hover,
 .nav-links a[aria-current="page"] { color: var(--text); border-bottom-color: var(--accent); }
-.nav-phone {
+/* Puhelinnumero napiksi */
+.nav-links a.nav-phone {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.05rem;
   letter-spacing: 0.03em;
-  color: var(--accent) !important;
-  border-bottom: none !important;
+  color: var(--accent);
+  padding: 9px 15px;
+  border: 2px solid var(--line-warm);
 }
+.nav-links a.nav-phone:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-dim); }
 .nav-phone svg { width: 16px; height: 16px; }
+/* Pyydä arvio -CTA-nappi */
+.nav-links a.nav-cta {
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: #1a1205;
+  background: var(--accent);
+  padding: 11px 18px;
+  border: 2px solid var(--accent);
+}
+.nav-links a.nav-cta:hover { color: #1a1205; background: var(--accent-deep); border-color: var(--accent-deep); }
 
 .burger { display: none; flex-direction: column; gap: 5px; padding: 8px; }
 .burger span { width: 24px; height: 2px; background: var(--text); transition: transform var(--t), opacity var(--t); }
@@ -222,6 +234,33 @@ section { padding: clamp(60px, 8vw, 104px) 0; }
   color: #1a1205;
   border-bottom: none;
 }
+
+/* ── Kiinteä Soita-palkki (mobiili) ───────────────────────── */
+.callbar {
+  display: none;
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 95;
+  grid-template-columns: 1fr 1fr;
+  border-top: 2px solid var(--accent);
+}
+.callbar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 15px 12px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.callbar a svg { width: 18px; height: 18px; }
+.callbar .cb-call { background: var(--ink-3); color: var(--text); }
+.callbar .cb-cta { background: var(--accent); color: #1a1205; }
+.callbar .cb-call:active { background: #000; }
+.callbar .cb-cta:active { background: var(--accent-deep); }
 
 /* ── Page hero (alasivut) ─────────────────────────────────── */
 .page-hero {
@@ -381,10 +420,14 @@ section { padding: clamp(60px, 8vw, 104px) 0; }
 }
 
 /* ── Responsive ───────────────────────────────────────────── */
-@media (max-width: 940px) {
+@media (max-width: 1100px) {
   .nav-links { display: none; }
   .burger { display: flex; }
+}
+@media (max-width: 940px) {
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .callbar { display: grid; }
+  body { padding-bottom: 60px; }
 }
 @media (max-width: 620px) {
   .cta-direct { grid-template-columns: 1fr; }
