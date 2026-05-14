@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="B. Bitumi Oy – kuvia tehdyistä bitumi- ja asfalttikorjauksista. Kuumabitumijuotokset, kumibitumilista, vedeneristys ja pihakorjaukset." />
-  <title>Kuvat | BBITUMI</title>
+  <meta name="description" content="Työmaakuvia B. Bitumi Oy:n tekemistä bitumi- ja asfalttikorjauksista — kuumabitumijuotokset, kumibitumilista, vedeneristys ja pihakorjaukset Uudellamaalla ja Etelä-Suomessa." />
+  <title>Työmaakuvat — tehtyjä bitumi- ja asfalttikorjauksia | B. Bitumi Oy</title>
+  <link rel="icon" href="bitumi-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Manrope:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
     .gallery-grid {
@@ -53,8 +54,8 @@
     .gallery-item:hover .gallery-item-overlay { opacity: 1; }
 
     .gallery-item-caption {
-      font-size: .78rem;
-      color: rgba(255,255,255,.9);
+      font-size: .82rem;
+      color: rgba(255,255,255,.92);
       line-height: 1.5;
       font-weight: 400;
     }
@@ -132,7 +133,7 @@
     }
 
     .lightbox-caption {
-      font-size: .875rem;
+      font-size: .9rem;
       color: var(--muted);
       text-align: center;
       line-height: 1.6;
@@ -154,7 +155,7 @@
       cursor: pointer;
       transition: background var(--t), color var(--t);
     }
-    .lightbox-close:hover { background: rgba(249,115,22,.15); color: var(--accent); }
+    .lightbox-close:hover { background: rgba(239,125,26,.15); color: var(--accent); }
 
     .lightbox-nav {
       position: fixed;
@@ -172,7 +173,7 @@
       cursor: pointer;
       transition: background var(--t), color var(--t), transform var(--t);
     }
-    .lightbox-nav:hover { background: rgba(249,115,22,.15); color: var(--accent); }
+    .lightbox-nav:hover { background: rgba(239,125,26,.15); color: var(--accent); }
     .lightbox-prev { left: 20px; }
     .lightbox-prev:hover { transform: translateY(-50%) translateX(-3px); }
     .lightbox-next { right: 20px; }
@@ -183,7 +184,7 @@
       top: 28px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: .75rem;
+      font-size: .8rem;
       font-weight: 600;
       letter-spacing: 2px;
       color: var(--muted);
@@ -200,10 +201,10 @@
     .gallery-count {
       font-family: var(--font-display);
       font-size: 4rem;
-      font-weight: 900;
-      color: rgba(255,255,255,.05);
+      font-weight: 800;
+      color: rgba(255,255,255,.06);
       line-height: 1;
-      letter-spacing: -3px;
+      letter-spacing: -2px;
       white-space: nowrap;
     }
 
@@ -221,14 +222,15 @@
 
   <nav class="navbar" id="navbar">
     <div class="container nav-inner">
-      <a href="index.html" class="logo">BB<span class="o">I</span>TUMI</a>
+      <a href="index.html" class="logo" aria-label="B. Bitumi Oy — etusivu"><img src="bitumi-logo.png" alt="B. Bitumi Oy"></a>
       <div class="nav-links">
         <a href="index.html">Etusivu</a>
         <a href="kuntokartoitukset.html">Kuntokartoitukset</a>
         <a href="bitumi.html">Bitumi</a>
-        <a href="yhteystiedot.html">Yhteystiedot</a>
+        <a href="kuvat.html" class="active">Kuvat</a>
         <a href="yritys.html">Yritys</a>
-        <a href="yhteystiedot.html" class="nav-cta">Pyydä tarjous</a>
+        <a href="yhteystiedot.html">Yhteystiedot</a>
+        <a href="yhteystiedot.html" class="nav-cta">Pyydä arvio</a>
       </div>
       <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
     </div>
@@ -237,19 +239,19 @@
     <a href="index.html">Etusivu</a>
     <a href="kuntokartoitukset.html">Kuntokartoitukset</a>
     <a href="bitumi.html">Bitumi</a>
-    <a href="yhteystiedot.html">Yhteystiedot</a>
-    <a href="yritys.html">Yritys</a>
     <a href="kuvat.html" class="active">Kuvat</a>
-    <a href="yhteystiedot.html" class="mob-cta">Pyydä tarjous</a>
+    <a href="yritys.html">Yritys</a>
+    <a href="yhteystiedot.html">Yhteystiedot</a>
+    <a href="yhteystiedot.html" class="mob-cta">Pyydä arvio</a>
   </div>
 
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="page-hero-bg" aria-hidden="true">KUVAT</div>
     <div class="container">
-      <div class="breadcrumb reveal"><a href="index.html">Etusivu</a><span class="sep">/</span><span>Kuvat</span></div>
+      <div class="breadcrumb reveal"><a href="index.html">Etusivu</a><span class="sep">/</span><span>Työmaakuvat</span></div>
       <h1 class="reveal d1">Töitä <span class="hl">käytännössä.</span></h1>
-      <p class="page-hero-sub reveal d2">Kuvia tehdyistä kohteista — bitumijuotokset, asfalttikorjaukset ja vedeneristykset.</p>
+      <p class="page-hero-sub reveal d2">Kuvia oikeista työkohteista — bitumijuotokset, kumibitumilista, asfalttipaikkaukset ja vedeneristykset.</p>
     </div>
   </section>
 
@@ -269,228 +271,116 @@
 
       <div class="gallery-grid">
 
-        <div class="gallery-item reveal"
-             data-src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20140923_001.jpg"
-             data-caption="Korjattavissa olevia halkeamia asfaltissa">
-          <img src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20140923_001.jpg"
-               alt="Korjattavissa olevia halkeamia asfaltissa"
-               onerror="this.parentElement.innerHTML='<div class=\'gallery-item-placeholder\'><svg width=\'32\' height=\'32\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg><span>Kuva</span></div>'">
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-caption">Korjattavissa olevia halkeamia asfaltissa</div>
-          </div>
-          <div class="gallery-item-zoom">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
+        <div class="gallery-item reveal" data-src="img/halkeama-ennen.jpg" data-caption="Korjattavissa olevia halkeamia asfaltissa">
+          <img src="img/halkeama-ennen.jpg" loading="lazy" alt="Korjattavissa olevia halkeamia asfaltissa"
+               onerror="this.parentElement.innerHTML='<div class=&quot;gallery-item-placeholder&quot;><span>Kuva</span></div>'">
+          <div class="gallery-item-overlay"><div class="gallery-item-caption">Korjattavissa olevia halkeamia asfaltissa</div></div>
+          <div class="gallery-item-zoom"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
         </div>
 
-        <div class="gallery-item reveal d1"
-             data-src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/Rappunen.jpg"
-             data-caption="Kumibituminauhalla voidaan korjata mm. porrasaskelmien saumat siististi">
-          <img src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/Rappunen.jpg"
-               alt="Kumibituminauhalla voidaan korjata porrasaskelmien saumat"
-               onerror="this.parentElement.innerHTML='<div class=\'gallery-item-placeholder\'><svg width=\'32\' height=\'32\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg><span>Kuva</span></div>'">
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-caption">Kumibituminauhalla voidaan korjata mm. porrasaskelmien saumat siististi</div>
-          </div>
-          <div class="gallery-item-zoom">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
+        <div class="gallery-item reveal d1" data-src="img/rappunen.jpg" data-caption="Kumibituminauhalla voidaan korjata mm. porrasaskelmien saumat siististi">
+          <img src="img/rappunen.jpg" loading="lazy" alt="Kumibituminauhalla korjattuja porrasaskelmien saumoja"
+               onerror="this.parentElement.innerHTML='<div class=&quot;gallery-item-placeholder&quot;><span>Kuva</span></div>'">
+          <div class="gallery-item-overlay"><div class="gallery-item-caption">Kumibituminauhalla voidaan korjata mm. porrasaskelmien saumat siististi</div></div>
+          <div class="gallery-item-zoom"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
         </div>
 
-        <div class="gallery-item reveal d2"
-             data-src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/Piha_korjaus"
-             data-caption="Pihakorjaus">
-          <img src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/Piha_korjaus"
-               alt="Pihakorjaus"
-               onerror="this.parentElement.innerHTML='<div class=\'gallery-item-placeholder\'><svg width=\'32\' height=\'32\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg><span>Kuva</span></div>'">
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-caption">Pihakorjaus</div>
-          </div>
-          <div class="gallery-item-zoom">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
+        <div class="gallery-item reveal d2" data-src="img/piha-korjaus.jpg" data-caption="Pihakorjaus">
+          <img src="img/piha-korjaus.jpg" loading="lazy" alt="Pihakorjaus käynnissä"
+               onerror="this.parentElement.innerHTML='<div class=&quot;gallery-item-placeholder&quot;><span>Kuva</span></div>'">
+          <div class="gallery-item-overlay"><div class="gallery-item-caption">Pihakorjaus</div></div>
+          <div class="gallery-item-zoom"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
         </div>
 
-        <div class="gallery-item reveal"
-             data-src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20170320_10_28_44_Pro.jpg"
-             data-caption="Kumibitumilistan asennus koneella">
-          <img src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20170320_10_28_44_Pro.jpg"
-               alt="Kumibitumilistan asennus koneella"
-               onerror="this.parentElement.innerHTML='<div class=\'gallery-item-placeholder\'><svg width=\'32\' height=\'32\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg><span>Kuva</span></div>'">
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-caption">Kumibitumilistan asennus koneella</div>
-          </div>
-          <div class="gallery-item-zoom">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
+        <div class="gallery-item reveal" data-src="img/kumibitumilista-asennus.jpg" data-caption="Kumibitumilistan asennus koneella">
+          <img src="img/kumibitumilista-asennus.jpg" loading="lazy" alt="Kumibitumilistan asennus koneella"
+               onerror="this.parentElement.innerHTML='<div class=&quot;gallery-item-placeholder&quot;><span>Kuva</span></div>'">
+          <div class="gallery-item-overlay"><div class="gallery-item-caption">Kumibitumilistan asennus koneella</div></div>
+          <div class="gallery-item-zoom"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
         </div>
 
-        <div class="gallery-item reveal d1"
-             data-src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20140906_136.jpg"
-             data-caption="Kuumabitumilla voidaan korjata pitkätkin asfaltin halkeamat">
-          <img src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20140906_136.jpg"
-               alt="Kuumabitumilla voidaan korjata pitkätkin asfaltin halkeamat"
-               onerror="this.parentElement.innerHTML='<div class=\'gallery-item-placeholder\'><svg width=\'32\' height=\'32\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg><span>Kuva</span></div>'">
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-caption">Kuumabitumilla voidaan korjata pitkätkin asfaltin halkeamat</div>
-          </div>
-          <div class="gallery-item-zoom">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
+        <div class="gallery-item reveal d1" data-src="img/hero-halkeama.jpg" data-caption="Kuumabitumilla voidaan korjata pitkätkin asfaltin halkeamat">
+          <img src="img/hero-halkeama.jpg" loading="lazy" alt="Kuumabitumilla korjattu pitkä asfalttihalkeama"
+               onerror="this.parentElement.innerHTML='<div class=&quot;gallery-item-placeholder&quot;><span>Kuva</span></div>'">
+          <div class="gallery-item-overlay"><div class="gallery-item-caption">Kuumabitumilla voidaan korjata pitkätkin asfaltin halkeamat</div></div>
+          <div class="gallery-item-zoom"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
         </div>
 
-        <div class="gallery-item reveal d2"
-             data-src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/huoltoauto.jpg"
-             data-caption="Huoltoauto">
-          <img src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/huoltoauto.jpg"
-               alt="Huoltoauto"
-               onerror="this.parentElement.innerHTML='<div class=\'gallery-item-placeholder\'><svg width=\'32\' height=\'32\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg><span>Kuva</span></div>'">
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-caption">Huoltoauto</div>
-          </div>
-          <div class="gallery-item-zoom">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
+        <div class="gallery-item reveal d2" data-src="img/huoltoauto.jpg" data-caption="Huoltoauto">
+          <img src="img/huoltoauto.jpg" loading="lazy" alt="B. Bitumi Oy:n huoltoauto"
+               onerror="this.parentElement.innerHTML='<div class=&quot;gallery-item-placeholder&quot;><span>Kuva</span></div>'">
+          <div class="gallery-item-overlay"><div class="gallery-item-caption">Huoltoauto</div></div>
+          <div class="gallery-item-zoom"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
         </div>
 
-        <div class="gallery-item reveal"
-             data-src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20151023_15_26_41_Pro.jpg"
-             data-caption="Kumibitumilista muotoutuu erilaisiin muotoihin siististi">
-          <img src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20151023_15_26_41_Pro.jpg"
-               alt="Kumibitumilista muotoutuu erilaisiin muotoihin siististi"
-               onerror="this.parentElement.innerHTML='<div class=\'gallery-item-placeholder\'><svg width=\'32\' height=\'32\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg><span>Kuva</span></div>'">
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-caption">Kumibitumilista muotoutuu erilaisiin muotoihin siististi</div>
-          </div>
-          <div class="gallery-item-zoom">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
+        <div class="gallery-item reveal" data-src="img/kumibitumilista-muoto.jpg" data-caption="Kumibitumilista muotoutuu erilaisiin muotoihin siististi">
+          <img src="img/kumibitumilista-muoto.jpg" loading="lazy" alt="Kumibitumilista muotoiltuna asfalttisaumaan"
+               onerror="this.parentElement.innerHTML='<div class=&quot;gallery-item-placeholder&quot;><span>Kuva</span></div>'">
+          <div class="gallery-item-overlay"><div class="gallery-item-caption">Kumibitumilista muotoutuu erilaisiin muotoihin siististi</div></div>
+          <div class="gallery-item-zoom"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
         </div>
 
-        <div class="gallery-item reveal d1"
-             data-src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/Kaivon_vaihto"
-             data-caption="Kaivon vaihdot">
-          <img src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/Kaivon_vaihto"
-               alt="Kaivon vaihdot"
-               onerror="this.parentElement.innerHTML='<div class=\'gallery-item-placeholder\'><svg width=\'32\' height=\'32\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg><span>Kuva</span></div>'">
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-caption">Kaivon vaihdot</div>
-          </div>
-          <div class="gallery-item-zoom">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
+        <div class="gallery-item reveal d1" data-src="img/kaivon-vaihto.jpg" data-caption="Kaivon vaihdot">
+          <img src="img/kaivon-vaihto.jpg" loading="lazy" alt="Kaivon vaihtotyö asfalttipihalla"
+               onerror="this.parentElement.innerHTML='<div class=&quot;gallery-item-placeholder&quot;><span>Kuva</span></div>'">
+          <div class="gallery-item-overlay"><div class="gallery-item-caption">Kaivon vaihdot</div></div>
+          <div class="gallery-item-zoom"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
         </div>
 
-        <div class="gallery-item reveal d2"
-             data-src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20160822_13_07_21_Pro.jpg"
-             data-caption="Jakajat">
-          <img src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20160822_13_07_21_Pro.jpg"
-               alt="Jakajat"
-               onerror="this.parentElement.innerHTML='<div class=\'gallery-item-placeholder\'><svg width=\'32\' height=\'32\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg><span>Kuva</span></div>'">
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-caption">Jakajat</div>
-          </div>
-          <div class="gallery-item-zoom">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
+        <div class="gallery-item reveal d2" data-src="img/jakajat.jpg" data-caption="Jakajat">
+          <img src="img/jakajat.jpg" loading="lazy" alt="Pihan jakajien korjaustyö"
+               onerror="this.parentElement.innerHTML='<div class=&quot;gallery-item-placeholder&quot;><span>Kuva</span></div>'">
+          <div class="gallery-item-overlay"><div class="gallery-item-caption">Jakajat</div></div>
+          <div class="gallery-item-zoom"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
         </div>
 
-        <div class="gallery-item reveal"
-             data-src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20170312_16_30_22_Pro.jpg"
-             data-caption="Bitumityökohde">
-          <img src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20170312_16_30_22_Pro.jpg"
-               alt="Bitumityökohde"
-               onerror="this.parentElement.innerHTML='<div class=\'gallery-item-placeholder\'><svg width=\'32\' height=\'32\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg><span>Kuva</span></div>'">
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-caption">Bitumityökohde</div>
-          </div>
-          <div class="gallery-item-zoom">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
+        <div class="gallery-item reveal" data-src="img/bitumityokohde.jpg" data-caption="Bitumityökohde">
+          <img src="img/bitumityokohde.jpg" loading="lazy" alt="Bitumityökohde työn aikana"
+               onerror="this.parentElement.innerHTML='<div class=&quot;gallery-item-placeholder&quot;><span>Kuva</span></div>'">
+          <div class="gallery-item-overlay"><div class="gallery-item-caption">Bitumityökohde</div></div>
+          <div class="gallery-item-zoom"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
         </div>
 
-        <div class="gallery-item reveal d1"
-             data-src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20150824_11_08_14_Pro.jpg"
-             data-caption="Jalkakäytävä voidaan pinnoittaa halutun sävyisellä kivellä">
-          <img src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20150824_11_08_14_Pro.jpg"
-               alt="Jalkakäytävä voidaan pinnoittaa halutun sävyisellä kivellä"
-               onerror="this.parentElement.innerHTML='<div class=\'gallery-item-placeholder\'><svg width=\'32\' height=\'32\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg><span>Kuva</span></div>'">
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-caption">Jalkakäytävä voidaan pinnoittaa halutun sävyisellä kivellä</div>
-          </div>
-          <div class="gallery-item-zoom">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
+        <div class="gallery-item reveal d1" data-src="img/jalkakaytava-pinnoitus.jpg" data-caption="Jalkakäytävä voidaan pinnoittaa halutun sävyisellä kivellä">
+          <img src="img/jalkakaytava-pinnoitus.jpg" loading="lazy" alt="Jalkakäytävä pinnoitettuna värisävytetyllä kivellä"
+               onerror="this.parentElement.innerHTML='<div class=&quot;gallery-item-placeholder&quot;><span>Kuva</span></div>'">
+          <div class="gallery-item-overlay"><div class="gallery-item-caption">Jalkakäytävä voidaan pinnoittaa halutun sävyisellä kivellä</div></div>
+          <div class="gallery-item-zoom"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
         </div>
 
-        <div class="gallery-item reveal d2"
-             data-src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20151119_10_56_07_Pro.jpg"
-             data-caption="B. Bitumi tekee myös laadukkaita asfalttipaikkauksia">
-          <img src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20151119_10_56_07_Pro.jpg"
-               alt="B. Bitumi tekee myös laadukkaita asfalttipaikkauksia"
-               onerror="this.parentElement.innerHTML='<div class=\'gallery-item-placeholder\'><svg width=\'32\' height=\'32\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg><span>Kuva</span></div>'">
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-caption">B. Bitumi tekee myös laadukkaita asfalttipaikkauksia</div>
-          </div>
-          <div class="gallery-item-zoom">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
+        <div class="gallery-item reveal d2" data-src="img/asfalttipaikkaus.jpg" data-caption="B. Bitumi Oy tekee myös laadukkaita asfalttipaikkauksia">
+          <img src="img/asfalttipaikkaus.jpg" loading="lazy" alt="Laadukas asfalttipaikkaus työkohteessa"
+               onerror="this.parentElement.innerHTML='<div class=&quot;gallery-item-placeholder&quot;><span>Kuva</span></div>'">
+          <div class="gallery-item-overlay"><div class="gallery-item-caption">B. Bitumi Oy tekee myös laadukkaita asfalttipaikkauksia</div></div>
+          <div class="gallery-item-zoom"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
         </div>
 
-        <div class="gallery-item reveal"
-             data-src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20150917_12_07_15_Pro.jpg"
-             data-caption="Kumibitumilista voidaan sirottaa halutun sävyisillä kivellä">
-          <img src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20150917_12_07_15_Pro.jpg"
-               alt="Kumibitumilista voidaan sirottaa halutun sävyisillä kivellä"
-               onerror="this.parentElement.innerHTML='<div class=\'gallery-item-placeholder\'><svg width=\'32\' height=\'32\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg><span>Kuva</span></div>'">
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-caption">Kumibitumilista voidaan sirottaa halutun sävyisillä kivellä</div>
-          </div>
-          <div class="gallery-item-zoom">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
+        <div class="gallery-item reveal" data-src="img/kumibitumilista-sirote.jpg" data-caption="Kumibitumilista voidaan sirotella halutun sävyisellä kivellä">
+          <img src="img/kumibitumilista-sirote.jpg" loading="lazy" alt="Kumibitumilista viimeisteltynä värikivisiroteella"
+               onerror="this.parentElement.innerHTML='<div class=&quot;gallery-item-placeholder&quot;><span>Kuva</span></div>'">
+          <div class="gallery-item-overlay"><div class="gallery-item-caption">Kumibitumilista voidaan sirotella halutun sävyisellä kivellä</div></div>
+          <div class="gallery-item-zoom"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
         </div>
 
-        <div class="gallery-item reveal d1"
-             data-src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20151112_13_39_16_Pro.jpg"
-             data-caption="B. Bitumi tekee liimattavien reunakivien korjauksia ja asennuksia">
-          <img src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20151112_13_39_16_Pro.jpg"
-               alt="B. Bitumi tekee liimattavien reunakivien korjauksia ja asennuksia"
-               onerror="this.parentElement.innerHTML='<div class=\'gallery-item-placeholder\'><svg width=\'32\' height=\'32\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg><span>Kuva</span></div>'">
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-caption">B. Bitumi tekee liimattavien reunakivien korjauksia ja asennuksia</div>
-          </div>
-          <div class="gallery-item-zoom">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
+        <div class="gallery-item reveal d1" data-src="img/reunakivet.jpg" data-caption="B. Bitumi Oy tekee liimattavien reunakivien korjauksia ja asennuksia">
+          <img src="img/reunakivet.jpg" loading="lazy" alt="Liimattavien reunakivien asennustyö"
+               onerror="this.parentElement.innerHTML='<div class=&quot;gallery-item-placeholder&quot;><span>Kuva</span></div>'">
+          <div class="gallery-item-overlay"><div class="gallery-item-caption">B. Bitumi Oy tekee liimattavien reunakivien korjauksia ja asennuksia</div></div>
+          <div class="gallery-item-zoom"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
         </div>
 
-        <div class="gallery-item reveal d2"
-             data-src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20151111_09_28_45_Pro.jpg"
-             data-caption="Autokannen pohjaeristys vesitiiviiksi">
-          <img src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20151111_09_28_45_Pro.jpg"
-               alt="Autokannen pohjaeristys vesitiiviiksi"
-               onerror="this.parentElement.innerHTML='<div class=\'gallery-item-placeholder\'><svg width=\'32\' height=\'32\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg><span>Kuva</span></div>'">
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-caption">Autokannen pohjaeristys vesitiiviiksi</div>
-          </div>
-          <div class="gallery-item-zoom">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
+        <div class="gallery-item reveal d2" data-src="img/autokannen-eristys.jpg" data-caption="Autokannen pohjaeristys vesitiiviiksi">
+          <img src="img/autokannen-eristys.jpg" loading="lazy" alt="Autotallin kannen pohjaeristys vesitiiviiksi"
+               onerror="this.parentElement.innerHTML='<div class=&quot;gallery-item-placeholder&quot;><span>Kuva</span></div>'">
+          <div class="gallery-item-overlay"><div class="gallery-item-caption">Autokannen pohjaeristys vesitiiviiksi</div></div>
+          <div class="gallery-item-zoom"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
         </div>
 
-        <div class="gallery-item reveal"
-             data-src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20150805_11_53_40_Pro.jpg"
-             data-caption="Kerrostalon sisäpihan kermieristys">
-          <img src="https://asiakas.kotisivukone.com/files/bbitumi.palvelee.fi/kuvat/WP_20150805_11_53_40_Pro.jpg"
-               alt="Kerrostalon sisäpihan kermieristys"
-               onerror="this.parentElement.innerHTML='<div class=\'gallery-item-placeholder\'><svg width=\'32\' height=\'32\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><polyline points=\'21 15 16 10 5 21\'/></svg><span>Kuva</span></div>'">
-          <div class="gallery-item-overlay">
-            <div class="gallery-item-caption">Kerrostalon sisäpihan kermieristys</div>
-          </div>
-          <div class="gallery-item-zoom">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-          </div>
+        <div class="gallery-item reveal" data-src="img/kermieristys.jpg" data-caption="Kerrostalon sisäpihan kermieristys">
+          <img src="img/kermieristys.jpg" loading="lazy" alt="Kerrostalon sisäpihan kermieristystyö"
+               onerror="this.parentElement.innerHTML='<div class=&quot;gallery-item-placeholder&quot;><span>Kuva</span></div>'">
+          <div class="gallery-item-overlay"><div class="gallery-item-caption">Kerrostalon sisäpihan kermieristys</div></div>
+          <div class="gallery-item-zoom"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
         </div>
 
       </div>
@@ -503,18 +393,18 @@
       <div class="cta-inner">
         <div class="section-label reveal">Ota yhteyttä</div>
         <h2 class="section-h reveal d1">Haluatko vastaavan<br><span class="hl">lopputuloksen?</span></h2>
-        <p class="section-p reveal d2">Pyydä tarjous kohteellesi — vastataan 24h sisällä.</p>
+        <p class="section-p reveal d2">Lähetä kuvat kohteesta — kerromme suoraan järkevimmän korjaustavan. Arvio 24h sisällä.</p>
         <div class="cta-btns reveal d3">
-          <a href="mailto:juha_valiviita@hotmail.com" class="btn-primary">
-            Pyydä tarjous
+          <a href="mailto:juha_valiviita@hotmail.com?subject=Tarjouspyynt%C3%B6%20%E2%80%93%20kuvat%20kohteesta" class="btn-primary">
+            Lähetä kuvat kohteesta
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="tel:+358404802955" class="btn-ghost">040 480 2955</a>
+          <a href="tel:+358404802955" class="btn-ghost">Soita 040 480 2955</a>
         </div>
         <div class="cta-contacts reveal d4">
           <div class="cc-item"><div class="cc-label">Sähköposti</div><a href="mailto:juha_valiviita@hotmail.com" class="cc-val">juha_valiviita@hotmail.com</a></div>
           <div class="cc-item"><div class="cc-label">Puhelin</div><a href="tel:+358404802955" class="cc-val">040 480 2955</a></div>
-          <div class="cc-item"><div class="cc-label">Toimialue</div><div class="cc-val">Etelä-Suomi</div></div>
+          <div class="cc-item"><div class="cc-label">Toimialue</div><div class="cc-val">Uusimaa &amp; Etelä-Suomi</div></div>
         </div>
       </div>
     </div>
@@ -524,28 +414,28 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo">BB<span class="o">I</span>TUMI</a>
-          <p>Premium bitumi- ja infrakorjaukset vaativiin kohteisiin koko Etelä-Suomessa. 20+ vuoden ammattikokemus.</p>
+          <a href="index.html" class="logo" aria-label="B. Bitumi Oy — etusivu"><img src="bitumi-logo.png" alt="B. Bitumi Oy"></a>
+          <p>B. Bitumi Oy korjaa bitumi- ja asfalttikohteet Uudellamaalla ja Etelä-Suomessa. Yli 20 vuoden käytännön kokemus.</p>
         </div>
         <div class="footer-col"><h6>Palvelut</h6><ul>
           <li><a href="kuntokartoitukset.html">Kuntokartoitukset</a></li>
           <li><a href="bitumi.html">Kuumabitumijuotokset</a></li>
-          <li><a href="bitumi.html">Asfalttihalkeamat</a></li>
-          <li><a href="bitumi.html">Vedeneristys</a></li>
+          <li><a href="bitumi.html">Kumibitumilista</a></li>
+          <li><a href="kuntokartoitukset.html">Asfalttihalkeamien korjaus</a></li>
         </ul></div>
         <div class="footer-col"><h6>Yritys</h6><ul>
           <li><a href="yritys.html">Yritysesittely</a></li>
-          <li><a href="kuvat.html">Kuvat</a></li>
+          <li><a href="kuvat.html">Työmaakuvat</a></li>
           <li><a href="yhteystiedot.html">Yhteystiedot</a></li>
         </ul></div>
         <div class="footer-col"><h6>Yhteystiedot</h6><ul>
           <li><a href="mailto:juha_valiviita@hotmail.com">juha_valiviita@hotmail.com</a></li>
           <li><a href="tel:+358404802955">040 480 2955</a></li>
-          <li><a href="#">Liekokuja 5b, 01300 Vantaa</a></li>
+          <li><a href="https://maps.google.com/?q=Liekokuja+5b,+01300+Vantaa" target="_blank" rel="noopener">Liekokuja 5b, 01300 Vantaa</a></li>
         </ul></div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 <span class="acc">BBITUMI</span>. Kaikki oikeudet pidätetään.</p>
+        <p>&copy; 2025 <span class="acc">B. Bitumi Oy</span>. Kaikki oikeudet pidätetään.</p>
         <p>Y-tunnus 2613792-9</p>
       </div>
     </div>
@@ -598,18 +488,15 @@
       lb.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
-
     function closeLightbox() {
       lb.classList.remove('active');
       document.body.style.overflow = '';
       lbImg.src = '';
     }
-
     function navigate(dir) {
       current = (current + dir + items.length) % items.length;
       openLightbox(current);
     }
-
     items.forEach((item, i) => item.addEventListener('click', () => openLightbox(i)));
     document.getElementById('lbClose').addEventListener('click', closeLightbox);
     document.getElementById('lbPrev').addEventListener('click', () => navigate(-1));

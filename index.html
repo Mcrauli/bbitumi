@@ -3,1536 +3,1249 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="BBITUMI – Premium bitumi- ja infrakorjaukset koko Etelä-Suomeen. Erikoisbitumityöt, asfalttikorjaukset ja vedeneristykset ammattitaidolla." />
-  <meta name="keywords" content="bitumi, asfaltti, infrakorjaukset, vedeneristys, bitumijuotos, asfalttikorjaus, Etelä-Suomi, Helsinki, Espoo, Vantaa" />
-  <meta property="og:title" content="BBITUMI – Premium infrakorjaukset" />
-  <meta property="og:description" content="Erikoisbitumityöt, asfalttikorjaukset ja vedeneristykset ammattitaidolla koko Etelä-Suomeen." />
-  <title>BBITUMI – Premium infrakorjaukset</title>
+  <meta name="description" content="B. Bitumi Oy korjaa asfalttihalkeamat, seinänvierustat, saumat, reunakivet ja vedeneristykset — usein ilman kallista uudelleenasfaltointia. Yli 20 vuoden kokemus, palvelualue Vantaa, Uusimaa ja Etelä-Suomi." />
+  <meta name="keywords" content="bitumikorjaus, asfalttihalkeamien korjaus, kuumabitumi, kumibitumilista, valuasfaltti, vedeneristys, reunakivityöt, kuntokartoitus, uudelleenasfaltointi, taloyhtiö, Vantaa, Uusimaa, Etelä-Suomi" />
+  <meta name="author" content="B. Bitumi Oy" />
+  <meta name="theme-color" content="#161412" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="B. Bitumi Oy — bitumi- ja asfalttikorjaukset" />
+  <meta property="og:description" content="Asfalttihalkeamat, seinänvierustat ja bitumikorjaukset ilman turhaa uudelleenasfaltointia. Yli 20 vuoden kokemus Uudellamaalla ja Etelä-Suomessa." />
+  <meta property="og:locale" content="fi_FI" />
+  <title>B. Bitumi Oy — bitumi- ja asfalttikorjaukset | Vantaa, Uusimaa, Etelä-Suomi</title>
+  <link rel="icon" href="bitumi-logo.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Manrope:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* ============================================
-       DESIGN TOKENS
-    ============================================ */
+    /* ============================================================
+       B. Bitumi Oy — etusivu
+       Aesthetic: industrial / worksite — warm charcoal, bitumi-orange,
+       one cream "spec sheet" section for the key message.
+    ============================================================ */
     :root {
-      --bg:           #111111;
-      --bg2:          #1C1C1C;
-      --bg3:          #161616;
-      --accent:       #F97316;
-      --accent-dim:   rgba(249,115,22,0.12);
-      --accent-hover: #EA6C0A;
-      --cream:        #F7F7F5;
-      --muted:        #888888;
-      --border:       rgba(255,255,255,0.07);
-      --border-warm:  rgba(249,115,22,0.25);
+      --ink:        #161412;   /* warm near-black base            */
+      --ink-2:      #1f1c17;   /* raised panels                   */
+      --ink-3:      #100e0b;   /* deepest                         */
+      --paper:      #f3efe6;   /* cream — light section           */
+      --paper-2:    #e9e3d5;   /* cream raised                    */
+      --on-paper:   #1d1a15;   /* dark text on cream              */
+      --on-paper-dim:#5f594e;
 
-      --font-display: 'Manrope', sans-serif;
-      --font-body:    'Inter', sans-serif;
+      --accent:     #ef7d1a;   /* bitumi orange                   */
+      --accent-deep:#d96c0d;
+      --accent-dim: rgba(239,125,26,0.12);
 
-      --ease:         cubic-bezier(0.4, 0, 0.2, 1);
-      --ease-out:     cubic-bezier(0, 0, 0.2, 1);
-      --t:            0.3s;
-      --t-slow:       0.7s;
+      --text:       #ece7dd;   /* warm off-white                  */
+      --text-dim:   #9a9286;   /* muted body text                 */
+      --line:       rgba(255,255,255,0.09);
+      --line-warm:  rgba(239,125,26,0.30);
+
+      --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+      --font-body:    'Barlow', system-ui, sans-serif;
+
+      --ease:   cubic-bezier(0.4, 0, 0.2, 1);
+      --t:      0.28s;
     }
 
-    /* ============================================
-       RESET
-    ============================================ */
-    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
     body {
       font-family: var(--font-body);
-      background: var(--bg);
-      color: var(--cream);
+      background: var(--ink);
+      color: var(--text);
+      line-height: 1.65;
       overflow-x: hidden;
-      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    a { text-decoration:none; color:inherit; }
-    img { max-width:100%; display:block; }
-    button { border:none; background:none; cursor:pointer; font:inherit; color:inherit; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
 
-    ::-webkit-scrollbar { width:4px; }
-    ::-webkit-scrollbar-track { background:var(--bg); }
-    ::-webkit-scrollbar-thumb { background:var(--accent); border-radius:2px; }
+    ::selection { background: var(--accent); color: #fff; }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: var(--ink-3); }
+    ::-webkit-scrollbar-thumb { background: #3a342b; border-radius: 0; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
-    /* ============================================
-       LAYOUT
-    ============================================ */
-    .container {
-      width: min(1280px, 92%);
-      margin: 0 auto;
+    :focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
     }
 
-    /* ============================================
-       REVEAL ANIMATIONS
-    ============================================ */
+    .container { width: min(1240px, 92%); margin-inline: auto; }
+
+    /* ── Reveal on scroll ─────────────────────────────────────── */
     .reveal {
       opacity: 0;
-      transform: translateY(36px);
-      transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+      transform: translateY(26px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
     }
-    .reveal.in { opacity:1; transform:translateY(0); }
+    .reveal.in { opacity: 1; transform: none; }
+    .d1 { transition-delay: 0.08s; }
+    .d2 { transition-delay: 0.16s; }
+    .d3 { transition-delay: 0.24s; }
+    .d4 { transition-delay: 0.32s; }
 
-    .reveal-left  { opacity:0; transform:translateX(-40px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
-    .reveal-left.in  { opacity:1; transform:translateX(0); }
-    .reveal-right { opacity:0; transform:translateX(40px);  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
-    .reveal-right.in { opacity:1; transform:translateX(0); }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      * { animation-duration: 0.001s !important; transition-duration: 0.001s !important; }
+    }
 
-    .d1 { transition-delay:0.1s; }
-    .d2 { transition-delay:0.2s; }
-    .d3 { transition-delay:0.3s; }
-    .d4 { transition-delay:0.4s; }
-    .d5 { transition-delay:0.5s; }
-    .d6 { transition-delay:0.6s; }
+    /* ── Shared headings ──────────────────────────────────────── */
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+    }
+    .kicker::before {
+      content: '';
+      width: 30px;
+      height: 2px;
+      background: var(--accent);
+    }
 
-    /* ============================================
-       NAVBAR
-    ============================================ */
-    .navbar {
+    .h-sec {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(2.2rem, 4.6vw, 3.7rem);
+      line-height: 1.02;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+    }
+    .h-sec .mark { color: var(--accent); }
+
+    .lead {
+      font-size: 1.07rem;
+      color: var(--text-dim);
+      max-width: 56ch;
+      margin-top: 18px;
+    }
+
+    section { padding: clamp(64px, 9vw, 116px) 0; }
+
+    /* ── Buttons ──────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.02rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 15px 26px;
+      transition: background var(--t), color var(--t), transform var(--t), border-color var(--t);
+    }
+    .btn svg { width: 18px; height: 18px; }
+    .btn-primary {
+      background: var(--accent);
+      color: #1a1205;
+      border: 2px solid var(--accent);
+    }
+    .btn-primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); transform: translateY(-2px); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border: 2px solid rgba(255,255,255,0.22);
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-on-paper { background: var(--on-paper); color: var(--paper); border: 2px solid var(--on-paper); }
+    .btn-on-paper:hover { background: var(--accent-deep); border-color: var(--accent-deep); color: #1a1205; transform: translateY(-2px); }
+
+    /* ── Navbar ───────────────────────────────────────────────── */
+    .nav {
       position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 900;
-      transition: background var(--t) var(--ease), border-color var(--t) var(--ease);
-      border-bottom: 1px solid transparent;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      border-bottom: 2px solid transparent;
+      transition: background var(--t), border-color var(--t);
     }
-
-    .navbar.scrolled {
-      background: rgba(17,17,17,0.94);
-      backdrop-filter: blur(20px) saturate(180%);
-      -webkit-backdrop-filter: blur(20px) saturate(180%);
-      border-bottom-color: var(--border);
+    .nav.scrolled {
+      background: rgba(18,16,13,0.96);
+      border-bottom-color: var(--line);
+      backdrop-filter: blur(10px);
     }
-
     .nav-inner {
-      height: 80px;
+      height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 20px;
     }
-
-    .logo {
-      font-family: var(--font-display);
-      font-size: 1.45rem;
-      font-weight: 900;
-      letter-spacing: 2px;
-      line-height: 1;
-    }
-    .logo .o { color: var(--accent); }
-
+    .brand { display: flex; align-items: center; }
+    .brand img { height: 30px; width: auto; }
     .nav-links {
       display: flex;
-      gap: 40px;
       align-items: center;
+      gap: 30px;
     }
-
-    .nav-links > a {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--muted);
-      letter-spacing: 0.3px;
-      transition: color var(--t) var(--ease);
-      position: relative;
-    }
-    .nav-links > a:not(.nav-cta)::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: var(--accent);
-      transition: width var(--t) var(--ease);
-    }
-    .nav-links > a:not(.nav-cta):hover { color: var(--cream); }
-    .nav-links > a:not(.nav-cta):hover::after { width: 100%; }
-
-    .nav-cta {
-      padding: 11px 22px;
-      background: var(--accent);
-      border-radius: 999px;
+    .nav-links a {
+      font-family: var(--font-display);
       font-weight: 600;
-      font-size: 0.85rem;
-      color: #fff !important;
-      transition: background var(--t), transform var(--t), box-shadow var(--t);
+      font-size: 1.02rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+      transition: color var(--t), border-color var(--t);
     }
-    .nav-cta:hover {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(249,115,22,0.35);
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] { color: var(--text); border-bottom-color: var(--accent); }
+    .nav-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      color: var(--accent) !important;
+      border-bottom: none !important;
     }
+    .nav-phone svg { width: 16px; height: 16px; }
 
-    .hamburger {
+    .burger {
       display: none;
       flex-direction: column;
       gap: 5px;
-      padding: 6px;
-      cursor: pointer;
+      padding: 8px;
     }
-    .hamburger span {
-      display: block;
-      width: 22px;
-      height: 1.5px;
-      background: var(--cream);
-      transition: var(--t) var(--ease);
+    .burger span {
+      width: 24px; height: 2px;
+      background: var(--text);
+      transition: transform var(--t), opacity var(--t);
     }
-    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    .mob-menu {
+    .mobile {
       display: none;
-      flex-direction: column;
-      gap: 0;
       position: fixed;
-      top: 80px;
-      left: 0;
-      right: 0;
-      background: rgba(17,17,17,0.97);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      z-index: 899;
-      padding: 12px 0 24px;
+      inset: 78px 0 auto 0;
+      z-index: 99;
+      background: var(--ink-3);
+      border-bottom: 2px solid var(--line);
+      flex-direction: column;
+      padding: 8px 0 16px;
     }
-    .mob-menu.open { display: flex; }
-    .mob-menu a {
-      padding: 16px 5%;
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--muted);
-      border-bottom: 1px solid var(--border);
-      transition: color var(--t);
-    }
-    .mob-menu a:hover { color: var(--cream); }
-    .mob-menu .mob-cta {
-      margin: 20px 5% 0;
-      text-align: center;
-      padding: 16px;
-      background: var(--accent);
-      border-radius: 999px;
-      color: #fff !important;
+    .mobile.open { display: flex; }
+    .mobile a {
+      font-family: var(--font-display);
       font-weight: 600;
-      border: none;
+      font-size: 1.15rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 15px 4%;
+      color: var(--text-dim);
+      border-bottom: 1px solid var(--line);
+    }
+    .mobile a:hover, .mobile a[aria-current="page"] { color: var(--accent); }
+    .mobile .m-cta {
+      margin: 14px 4% 0;
+      text-align: center;
+      background: var(--accent);
+      color: #1a1205;
+      border-bottom: none;
     }
 
-    /* ============================================
-       HERO
-    ============================================ */
+    /* ── Hero ─────────────────────────────────────────────────── */
     .hero {
       position: relative;
-      min-height: 100vh;
+      min-height: 100svh;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
+      padding-top: 78px;
       overflow: hidden;
     }
-
-    .hero-video {
+    .hero-photo {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(32%) saturate(60%);
+      object-position: center 60%;
+      z-index: 0;
     }
-
-    /* Grain overlay */
-    .hero-grain {
+    .hero::before {
+      content: '';
       position: absolute;
       inset: 0;
       z-index: 1;
-      opacity: 0.4;
-      background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
-      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(18,16,13,0.55) 0%, rgba(18,16,13,0.35) 35%, rgba(18,16,13,0.92) 88%, var(--ink) 100%),
+        linear-gradient(90deg, rgba(18,16,13,0.78) 0%, rgba(18,16,13,0.15) 70%);
     }
-
-    .hero-overlay {
+    /* hi-vis hazard stripe accent */
+    .hero::after {
+      content: '';
       position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: linear-gradient(
-        135deg,
-        rgba(0,0,0,0.75) 0%,
-        rgba(0,0,0,0.35) 60%,
-        rgba(0,0,0,0.6) 100%
+      left: 0; right: 0; bottom: 0;
+      height: 6px;
+      z-index: 2;
+      background: repeating-linear-gradient(
+        -45deg, var(--accent) 0 22px, var(--ink-3) 22px 44px
       );
     }
-
-    .hero-fade-bottom {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 280px;
-      z-index: 2;
-      background: linear-gradient(to top, var(--bg) 0%, transparent 100%);
-    }
-
-    .hero-content {
+    .hero-inner {
       position: relative;
-      z-index: 3;
-      padding: 160px 0 140px;
-      max-width: 920px;
+      z-index: 2;
+      padding-bottom: clamp(56px, 9vw, 104px);
+      max-width: 880px;
     }
-
-    .eyebrow {
+    .hero-tag {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 8px 16px;
-      border: 1px solid rgba(249,115,22,0.35);
-      border-radius: 999px;
-      background: rgba(249,115,22,0.07);
-      margin-bottom: 36px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 1.8px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--text);
+      background: rgba(0,0,0,0.4);
+      border: 1px solid var(--line-warm);
+      padding: 8px 16px;
+      margin-bottom: 26px;
     }
-
-    .pulse-dot {
-      width: 6px;
-      height: 6px;
-      background: var(--accent);
-      border-radius: 50%;
-      flex-shrink: 0;
-      position: relative;
-    }
-    .pulse-dot::after {
-      content: '';
-      position: absolute;
-      inset: -5px;
-      border-radius: 50%;
-      background: var(--accent);
-      opacity: 0.25;
-      animation: pulse 2.2s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%,100% { transform:scale(1); opacity:0.25; }
-      50%      { transform:scale(2); opacity:0; }
-    }
-
+    .hero-tag .dot { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; }
     .hero h1 {
       font-family: var(--font-display);
-      font-size: clamp(3rem, 7.5vw, 7.2rem);
-      font-weight: 900;
-      line-height: 0.92;
-      letter-spacing: -3px;
-      color: var(--cream);
-      margin-bottom: 32px;
+      font-weight: 800;
+      font-size: clamp(2.7rem, 7vw, 5.7rem);
+      line-height: 0.97;
+      letter-spacing: -0.015em;
+      text-transform: uppercase;
     }
-    .hero h1 .highlight { color: var(--accent); }
-
-    .hero-sub {
-      max-width: 580px;
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #a8a8a8;
-      font-weight: 300;
-      margin-bottom: 52px;
+    .hero h1 .mark { color: var(--accent); }
+    .hero p {
+      font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+      color: #d8d2c6;
+      max-width: 60ch;
+      margin-top: 24px;
     }
-
     .hero-actions {
       display: flex;
-      gap: 14px;
       flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 36px;
     }
 
-    /* Buttons */
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 18px 32px;
-      background: var(--accent);
-      color: #fff;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: background var(--t), transform var(--t), box-shadow var(--t);
+    /* ── Trust strip ──────────────────────────────────────────── */
+    .trust {
+      background: var(--ink-3);
+      border-bottom: 1px solid var(--line);
+      padding: 0;
     }
-    .btn-primary svg { transition: transform 0.3s var(--ease); }
-    .btn-primary:hover {
-      background: var(--accent-hover);
-      transform: translateY(-3px);
-      box-shadow: 0 14px 36px rgba(249,115,22,0.4);
-    }
-    .btn-primary:hover svg { transform: translateX(4px); }
-
-    .btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 18px 32px;
-      border: 1px solid rgba(255,255,255,0.15);
-      color: var(--cream);
-      border-radius: 999px;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: border-color var(--t), background var(--t), color var(--t);
-    }
-    .btn-ghost:hover {
-      background: rgba(255,255,255,0.07);
-      border-color: rgba(255,255,255,0.3);
-    }
-
-    .hero-scroll-hint {
-      position: absolute;
-      bottom: 32px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 3;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-    }
-    .scroll-track {
-      width: 1px;
-      height: 52px;
-      position: relative;
-      overflow: hidden;
-      background: rgba(255,255,255,0.08);
-    }
-    .scroll-track::after {
-      content: '';
-      position: absolute;
-      top: -52px;
-      left: 0;
-      width: 1px;
-      height: 52px;
-      background: var(--accent);
-      animation: scrollDown 2s ease-in-out infinite;
-    }
-    @keyframes scrollDown {
-      0%   { top: -52px; }
-      100% { top: 52px; }
-    }
-
-    /* ============================================
-       STATS
-    ============================================ */
-    .stats {
-      padding: 0 0 96px;
-    }
-
-    .stats-grid {
+    .trust-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      overflow: hidden;
     }
-
-    .stat-card {
-      padding: 44px 36px;
-      border-right: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-      transition: background var(--t);
+    .trust-item {
+      padding: 30px 28px;
+      border-right: 1px solid var(--line);
     }
-    .stat-card:last-child { border-right: none; }
-    .stat-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--accent);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform var(--t-slow) var(--ease);
-    }
-    .stat-card:hover { background: #202020; }
-    .stat-card:hover::before { transform: scaleX(1); }
-
-    .stat-num {
+    .trust-item:last-child { border-right: none; }
+    .trust-num {
       font-family: var(--font-display);
-      font-size: 3.2rem;
-      font-weight: 900;
-      color: var(--accent);
-      line-height: 1;
-      letter-spacing: -2px;
-      margin-bottom: 12px;
-    }
-
-    .stat-desc {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.65;
-      max-width: 160px;
-    }
-
-    /* ============================================
-       SECTION LABELS
-    ============================================ */
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 20px;
-    }
-    .section-label::before {
-      content: '';
-      display: block;
-      width: 24px;
-      height: 1px;
-      background: var(--accent);
-    }
-
-    .section-h {
-      font-family: var(--font-display);
-      font-size: clamp(2.4rem, 4.5vw, 4.2rem);
-      font-weight: 900;
-      line-height: 1.0;
-      letter-spacing: -2px;
-      color: var(--cream);
-    }
-    .section-h .hl { color: var(--accent); }
-
-    .section-p {
-      font-size: 1.05rem;
-      color: var(--muted);
-      line-height: 1.8;
-      font-weight: 300;
-      max-width: 460px;
-      margin-top: 20px;
-    }
-
-    /* ============================================
-       SERVICES
-    ============================================ */
-    .services {
-      padding: 96px 0;
-      background: var(--bg);
-    }
-
-    .services-header {
-      margin-bottom: 72px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      overflow: hidden;
-    }
-
-    .svc {
-      background: var(--bg);
-      padding: 44px 38px 36px;
-      position: relative;
-      overflow: hidden;
-      transition: background var(--t);
-    }
-    .svc::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(249,115,22,0.03);
-      opacity: 0;
-      transition: opacity var(--t);
-    }
-    .svc:hover { background: #181818; }
-    .svc:hover::after { opacity: 1; }
-
-    .svc-index {
-      font-family: var(--font-display);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      color: var(--accent);
-      opacity: 0.5;
-      margin-bottom: 20px;
-    }
-
-    .svc-icon {
-      width: 44px;
-      height: 44px;
-      color: var(--accent);
-      margin-bottom: 20px;
-      transition: transform var(--t);
-    }
-    .svc:hover .svc-icon { transform: scale(1.1); }
-
-    .svc-name {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
       font-weight: 800;
-      letter-spacing: -0.5px;
-      color: var(--cream);
-      margin-bottom: 14px;
-    }
-
-    .svc-desc {
-      font-size: 0.875rem;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
-    .svc-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 20px;
-      font-size: 0.8rem;
-      font-weight: 600;
+      font-size: 2.5rem;
+      line-height: 1;
       color: var(--accent);
-      opacity: 0;
-      transform: translateX(-10px);
-      transition: opacity var(--t), transform var(--t);
+      letter-spacing: -0.01em;
     }
-    .svc:hover .svc-link { opacity: 1; transform: translateX(0); }
-
-    /* ============================================
-       WHY BBITUMI
-    ============================================ */
-    .why {
-      padding: 96px 0;
-      background: var(--bg2);
-      position: relative;
-      overflow: hidden;
+    .trust-label {
+      font-size: 0.92rem;
+      color: var(--text-dim);
+      margin-top: 8px;
     }
 
-    .why-bg-text {
-      position: absolute;
-      right: -40px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-family: var(--font-display);
-      font-size: clamp(6rem, 16vw, 16rem);
-      font-weight: 900;
-      color: rgba(255,255,255,0.022);
-      letter-spacing: -8px;
-      pointer-events: none;
-      user-select: none;
-      white-space: nowrap;
-    }
+    /* ── Section header block ─────────────────────────────────── */
+    .sec-head { max-width: 760px; margin-bottom: 52px; }
 
-    .why-grid {
+    /* ── Problem cards ────────────────────────────────────────── */
+    .problems { background: var(--ink); }
+    .problem-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 88px;
-      align-items: center;
-      position: relative;
-      z-index: 1;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background: var(--line);
+      border: 1px solid var(--line);
     }
-
-    .why-left p {
-      margin-top: 28px;
-      font-size: 1.05rem;
-      color: var(--muted);
-      line-height: 1.85;
-      font-weight: 300;
-    }
-
-    .why-features {
+    .problem {
+      background: var(--ink-2);
+      padding: 38px 36px;
       display: flex;
       flex-direction: column;
+      transition: background var(--t);
     }
-
-    .feat {
-      padding: 24px 0;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-      transition: padding-left var(--t);
-    }
-    .feat:first-child { border-top: 1px solid var(--border); }
-    .feat:hover { padding-left: 6px; }
-
-    .feat-ico {
-      width: 38px;
-      height: 38px;
-      min-width: 38px;
-      background: var(--accent-dim);
-      border: 1px solid var(--border-warm);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      margin-top: 2px;
-    }
-
-    .feat-body h4 {
+    .problem:hover { background: #26221b; }
+    .problem-no {
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 0.95rem;
-      color: var(--cream);
-      margin-bottom: 5px;
-    }
-    .feat-body p {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    /* ============================================
-       REFERENSSIT
-    ============================================ */
-    .refs {
-      padding: 96px 0;
-      background: var(--bg);
-    }
-
-    .refs-top {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      margin-bottom: 72px;
-      gap: 40px;
-    }
-
-    .refs-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .ref-card {
-      border-radius: 18px;
-      overflow: hidden;
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      transition: border-color var(--t), transform var(--t-slow), box-shadow var(--t-slow);
-      cursor: pointer;
-    }
-    .ref-card:hover {
-      border-color: var(--border-warm);
-      transform: translateY(-5px);
-      box-shadow: 0 28px 56px rgba(0,0,0,0.45);
-    }
-    .ref-card.span2 { grid-column: span 2; }
-
-    .ref-thumb {
-      position: relative;
-      overflow: hidden;
-    }
-    .ref-card .ref-thumb      { height: 260px; }
-    .ref-card.span2 .ref-thumb { height: 360px; }
-
-    .ref-bg {
-      width: 100%;
-      height: 100%;
-      transition: transform 0.7s var(--ease-out);
-    }
-    .ref-card:hover .ref-bg { transform: scale(1.04); }
-
-    /* Industrial placeholder backgrounds */
-    .ref-bg-a {
-      background:
-        radial-gradient(ellipse at 25% 65%, #2d200e 0%, #1a1208 50%, #0d0d0d 100%),
-        repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,255,255,0.008) 3px, rgba(255,255,255,0.008) 4px);
-      background-blend-mode: normal, overlay;
-    }
-    .ref-bg-b {
-      background:
-        radial-gradient(ellipse at 70% 30%, #0e1828 0%, #0a1020 50%, #0d0d0d 100%);
-    }
-    .ref-bg-c {
-      background:
-        radial-gradient(ellipse at 50% 50%, #1a1a1a 0%, #101010 60%, #0c0c0c 100%);
-    }
-    .ref-bg-d {
-      background:
-        radial-gradient(ellipse at 80% 70%, #1c1208 0%, #141008 50%, #0d0d0d 100%);
-    }
-
-    .ref-grad {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
-    }
-
-    .ref-pill {
-      position: absolute;
-      top: 18px;
-      left: 18px;
-      padding: 5px 13px;
-      background: rgba(0,0,0,0.72);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
       color: var(--accent);
-      backdrop-filter: blur(8px);
     }
-
-    .ref-body {
-      padding: 28px 30px 30px;
-    }
-
-    .ref-loc {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .ref-title {
+    .problem h3 {
       font-family: var(--font-display);
-      font-size: 1.2rem;
       font-weight: 800;
-      letter-spacing: -0.4px;
-      color: var(--cream);
-      margin-bottom: 10px;
+      font-size: 1.7rem;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin: 14px 0 12px;
     }
-
-    .ref-desc {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.7;
+    .problem p { color: var(--text-dim); font-size: 0.99rem; }
+    .problem .why {
+      color: var(--text);
+      font-size: 0.95rem;
+      margin-top: 12px;
+      padding-left: 16px;
+      border-left: 2px solid var(--line-warm);
     }
-
-    .ref-tags {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 18px;
+    .problem .method {
+      margin-top: auto;
+      padding-top: 20px;
     }
-    .ref-tag {
-      padding: 4px 11px;
-      background: var(--accent-dim);
-      border: 1px solid var(--border-warm);
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 600;
+    .method-tag {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       color: var(--accent);
+      background: var(--accent-dim);
+      border: 1px solid var(--line-warm);
+      padding: 6px 13px;
     }
 
-    /* ============================================
-       CTA BAND
-    ============================================ */
-    .cta-band {
-      padding: 96px 0;
-      background: var(--bg2);
+    /* ── Kuntokartoitus — cream "spec sheet" section ──────────── */
+    .saving {
+      background: var(--paper);
+      color: var(--on-paper);
       position: relative;
-      overflow: hidden;
     }
-    .cta-band::before {
-      content: '';
-      position: absolute;
-      top: -160px; right: -160px;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(249,115,22,0.07) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .cta-band::after {
-      content: '';
-      position: absolute;
-      bottom: -120px; left: -120px;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(249,115,22,0.05) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .cta-inner {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      max-width: 780px;
-      margin: 0 auto;
-    }
-    .cta-inner .section-label { justify-content: center; }
-    .cta-inner .section-h  { text-align: center; }
-    .cta-inner .section-p  { text-align: center; margin: 24px auto 0; }
-
-    .cta-btns {
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 44px;
-    }
-
-    .cta-contacts {
-      display: flex;
-      gap: 0;
-      justify-content: center;
-      margin-top: 60px;
-      border-top: 1px solid var(--border);
-      padding-top: 48px;
-    }
-
-    .cc-item {
-      flex: 1;
-      max-width: 240px;
-      text-align: center;
-      padding: 0 32px;
-      border-right: 1px solid var(--border);
-    }
-    .cc-item:last-child { border-right: none; }
-
-    .cc-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-    .cc-val {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--cream);
-      transition: color var(--t);
-    }
-    .cc-val:hover { color: var(--accent); }
-
-    /* ============================================
-       FOOTER
-    ============================================ */
-    .footer {
-      background: var(--bg);
-      border-top: 1px solid var(--border);
-      padding: 72px 0 40px;
-    }
-
-    .footer-grid {
+    .saving .kicker { color: var(--accent-deep); }
+    .saving .kicker::before { background: var(--accent-deep); }
+    .saving-grid {
       display: grid;
-      grid-template-columns: 2.2fr 1fr 1fr 1fr;
-      gap: 60px;
-      margin-bottom: 60px;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 68px;
+      align-items: center;
     }
-
-    .footer-brand .logo {
-      display: block;
-      margin-bottom: 18px;
+    .saving h2 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(2.3rem, 4.4vw, 3.6rem);
+      line-height: 1.0;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
     }
-    .footer-brand p {
-      font-size: 0.875rem;
-      color: var(--muted);
-      line-height: 1.75;
-      max-width: 260px;
+    .saving h2 .mark { color: var(--accent-deep); }
+    .saving p {
+      color: var(--on-paper-dim);
+      font-size: 1.08rem;
+      margin-top: 20px;
+      max-width: 52ch;
     }
-
-    .footer-col h6 {
+    .saving-actions { margin-top: 32px; }
+    .steps {
+      display: flex;
+      flex-direction: column;
+      border-top: 2px solid var(--on-paper);
+    }
+    .step {
+      display: flex;
+      gap: 22px;
+      padding: 26px 4px;
+      border-bottom: 1px solid rgba(0,0,0,0.13);
+    }
+    .step-no {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 2.1rem;
+      line-height: 1;
+      color: var(--accent-deep);
+      min-width: 48px;
+    }
+    .step h4 {
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 0.75rem;
-      letter-spacing: 2px;
+      font-size: 1.3rem;
       text-transform: uppercase;
-      color: var(--cream);
-      margin-bottom: 20px;
+      line-height: 1.1;
     }
-    .footer-col ul {
-      list-style: none;
+    .step p { color: var(--on-paper-dim); font-size: 0.97rem; margin-top: 4px; }
+
+    /* ── Services ─────────────────────────────────────────────── */
+    .services { background: var(--ink-2); }
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .svc {
+      background: var(--ink);
+      padding: 34px 30px;
       display: flex;
       flex-direction: column;
       gap: 12px;
+      transition: background var(--t);
     }
-    .footer-col ul li a {
-      font-size: 0.875rem;
-      color: var(--muted);
+    .svc:hover { background: var(--ink-2); }
+    .svc-ico {
+      width: 46px; height: 46px;
+      color: var(--accent);
+      border: 2px solid var(--line-warm);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .svc-ico svg { width: 24px; height: 24px; }
+    .svc h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.35rem;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+    .svc p { color: var(--text-dim); font-size: 0.95rem; }
+    .svc-link {
+      margin-top: auto;
+      padding-top: 8px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .svc-link svg { width: 15px; height: 15px; transition: transform var(--t); }
+    .svc:hover .svc-link svg { transform: translateX(4px); }
+
+    /* ── Worksite gallery ─────────────────────────────────────── */
+    .gallery { background: var(--ink); }
+    .gallery-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 44px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .shot {
+      position: relative;
+      aspect-ratio: 16 / 11;
+      overflow: hidden;
+      background: var(--ink-2);
+    }
+    .shot img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease), filter 0.6s var(--ease);
+      filter: saturate(0.92) brightness(0.92);
+    }
+    .shot:hover img { transform: scale(1.05); filter: saturate(1.05) brightness(1); }
+    .shot figcaption {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 30px 18px 14px;
+      font-size: 0.88rem;
+      color: #f0ebe1;
+      background: linear-gradient(180deg, transparent, rgba(13,11,8,0.92));
+    }
+    .shot-fallback {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 8px;
+      color: #4a443a;
+      background: repeating-linear-gradient(-45deg, #1c1914 0 14px, #211d17 14px 28px);
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ── Why us ───────────────────────────────────────────────── */
+    .why { background: var(--ink-2); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .why-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .why-item {
+      background: var(--ink);
+      padding: 24px 22px;
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+    }
+    .why-item svg { width: 20px; height: 20px; color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+    .why-item h4 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.08rem;
+      text-transform: uppercase;
+      line-height: 1.12;
+    }
+    .why-item p { font-size: 0.88rem; color: var(--text-dim); margin-top: 3px; }
+    .why-badge {
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px;
+      background: var(--ink);
+      border: 1px solid var(--line);
+    }
+    .why-badge img { width: 92px; height: auto; }
+    .why-badge span { font-size: 0.9rem; color: var(--text-dim); }
+    .why-badge strong { color: var(--text); display: block; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.03em; }
+
+    /* ── Contact / CTA ────────────────────────────────────────── */
+    .contact { background: var(--ink); position: relative; }
+    .contact::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 6px;
+      background: repeating-linear-gradient(-45deg, var(--accent) 0 22px, var(--ink-3) 22px 44px);
+    }
+    .contact-head { max-width: 720px; margin-bottom: 46px; }
+    .contact-actions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .ca {
+      background: var(--ink-2);
+      padding: 34px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: background var(--t);
+    }
+    .ca:hover { background: #26221b; }
+    .ca-ico { width: 40px; height: 40px; color: var(--accent); }
+    .ca-ico svg { width: 100%; height: 100%; }
+    .ca h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.32rem;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+    .ca p { font-size: 0.94rem; color: var(--text-dim); }
+    .ca-do {
+      margin-top: auto;
+      padding-top: 10px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+    }
+    .contact-direct {
+      margin-top: 2px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-top: none;
+    }
+    .cd {
+      background: var(--accent);
+      color: #1a1205;
+      padding: 26px 30px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: background var(--t);
+    }
+    .cd:hover { background: var(--accent-deep); }
+    .cd svg { width: 26px; height: 26px; flex-shrink: 0; }
+    .cd-label {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+    .cd-val {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(1.3rem, 2.4vw, 1.85rem);
+      line-height: 1;
+      letter-spacing: 0.01em;
+    }
+
+    /* ── Footer ───────────────────────────────────────────────── */
+    .footer {
+      background: var(--ink-3);
+      border-top: 1px solid var(--line);
+      padding: 64px 0 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.4fr;
+      gap: 48px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid var(--line);
+    }
+    .footer-brand img { height: 30px; width: auto; margin-bottom: 16px; }
+    .footer-brand p { font-size: 0.92rem; color: var(--text-dim); max-width: 32ch; }
+    .footer-col h5 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .footer-col a, .footer-col p {
+      display: block;
+      font-size: 0.92rem;
+      color: var(--text-dim);
+      padding: 5px 0;
       transition: color var(--t);
     }
-    .footer-col ul li a:hover { color: var(--cream); }
-
+    .footer-col a:hover { color: var(--accent); }
     .footer-bottom {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
-      align-items: center;
-      padding-top: 32px;
-      border-top: 1px solid var(--border);
-    }
-    .footer-bottom p {
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-    .footer-bottom .acc { color: var(--accent); }
-
-    /* ============================================
-       RESPONSIVE
-    ============================================ */
-    @media (max-width: 1024px) {
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .why-grid      { gap: 56px; }
-      .footer-grid   { grid-template-columns: 1fr 1fr; gap: 40px; }
+      gap: 10px;
+      padding-top: 28px;
+      font-size: 0.85rem;
+      color: var(--text-dim);
     }
 
-    @media (max-width: 768px) {
-      .nav-links  { display: none; }
-      .hamburger  { display: flex; }
-
-      .stats-grid    { grid-template-columns: 1fr 1fr; }
-      .services-grid { grid-template-columns: 1fr; }
-      .why-grid      { grid-template-columns: 1fr; gap: 48px; }
-      .why-bg-text   { display: none; }
-      .refs-grid     { grid-template-columns: 1fr; }
-      .ref-card.span2 { grid-column: span 1; }
-      .refs-top      { flex-direction: column; align-items: flex-start; }
-      .cta-contacts  { flex-direction: column; align-items: center; gap: 28px; }
-      .cc-item       { border-right: none; border-bottom: 1px solid var(--border); padding: 0 0 28px; max-width: 100%; }
-      .cc-item:last-child { border-bottom: none; padding-bottom: 0; }
-      .footer-grid   { grid-template-columns: 1fr; gap: 32px; }
-      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    /* ── Responsive ───────────────────────────────────────────── */
+    @media (max-width: 940px) {
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .saving-grid { grid-template-columns: 1fr; gap: 44px; }
+      .svc-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
     }
-
-    @media (max-width: 520px) {
-      .hero h1      { letter-spacing: -2px; }
-      .hero-actions { flex-direction: column; }
-      .btn-primary, .btn-ghost { justify-content: center; }
-      .stats-grid   { grid-template-columns: 1fr; }
-      .cta-btns     { flex-direction: column; align-items: center; }
+    @media (max-width: 620px) {
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+      .trust-item:nth-child(2) { border-right: none; }
+      .trust-item:nth-child(1), .trust-item:nth-child(2) { border-bottom: 1px solid var(--line); }
+      .problem-grid { grid-template-columns: 1fr; }
+      .svc-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .why-list { grid-template-columns: 1fr; }
+      .contact-actions { grid-template-columns: 1fr; }
+      .contact-direct { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .hero-actions .btn { flex: 1 1 100%; justify-content: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ════════════════════ NAVBAR ════════════════════ -->
-  <nav class="navbar" id="navbar">
+  <!-- ══════════════ NAV ══════════════ -->
+  <nav class="nav" id="nav">
     <div class="container nav-inner">
-      <a href="#" class="logo">BB<span class="o">I</span>TUMI</a>
-
+      <a href="index.html" class="brand" aria-label="B. Bitumi Oy — etusivu">
+        <img src="bitumi-logo.png" alt="B. Bitumi Oy" />
+      </a>
       <div class="nav-links">
-        <a href="index.html" class="active">Etusivu</a>
+        <a href="index.html" aria-current="page">Etusivu</a>
         <a href="kuntokartoitukset.html">Kuntokartoitukset</a>
         <a href="bitumi.html">Bitumi</a>
-        <a href="yhteystiedot.html">Yhteystiedot</a>
+        <a href="kuvat.html">Kuvat</a>
         <a href="yritys.html">Yritys</a>
-        <a href="yhteystiedot.html" class="nav-cta">Pyydä tarjous</a>
+        <a href="yhteystiedot.html">Yhteystiedot</a>
+        <a href="tel:+358404802955" class="nav-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          040 480 2955
+        </a>
       </div>
-
-      <div class="hamburger" id="ham" aria-label="Valikko">
+      <button class="burger" id="burger" aria-label="Avaa valikko" aria-expanded="false" aria-controls="mobile">
         <span></span><span></span><span></span>
-      </div>
+      </button>
     </div>
   </nav>
-
-  <div class="mob-menu" id="mobMenu">
-    <a href="index.html" class="active">Etusivu</a>
+  <div class="mobile" id="mobile">
+    <a href="index.html" aria-current="page">Etusivu</a>
     <a href="kuntokartoitukset.html">Kuntokartoitukset</a>
     <a href="bitumi.html">Bitumi</a>
-    <a href="yhteystiedot.html">Yhteystiedot</a>
-    <a href="yritys.html">Yritys</a>
     <a href="kuvat.html">Kuvat</a>
-    <a href="yhteystiedot.html" class="mob-cta">Pyydä tarjous</a>
+    <a href="yritys.html">Yritys</a>
+    <a href="yhteystiedot.html">Yhteystiedot</a>
+    <a href="tel:+358404802955" class="m-cta">Soita 040 480 2955</a>
   </div>
 
-  <!-- ════════════════════ HERO ════════════════════ -->
-  <section class="hero" id="hero">
-    <video autoplay muted loop playsinline class="hero-video" aria-hidden="true">
-      <source src="hero-video.mp4" type="video/mp4">
-    </video>
-    <div class="hero-grain" aria-hidden="true"></div>
-    <div class="hero-overlay" aria-hidden="true"></div>
-    <div class="hero-fade-bottom" aria-hidden="true"></div>
-
+  <!-- ══════════════ HERO ══════════════ -->
+  <header class="hero">
+    <img class="hero-photo" src="img/hero-halkeama.jpg"
+         alt="Kuumabitumijuotoksella korjattu pitkä asfalttihalkeama työmaalla"
+         onerror="this.remove()" />
     <div class="container">
-      <div class="hero-content">
-        <div class="eyebrow">
-          <div class="pulse-dot" aria-hidden="true"></div>
-          Premium infrakorjaukset &middot; Etelä-Suomi
-        </div>
-
-        <h1>
-          Kestävät bitumi-<br>
-          ja <span class="highlight">infrakorjaukset</span><br>
-          vaativiin kohteisiin.
-        </h1>
-
-        <p class="hero-sub">
-          Erikoisbitumityöt, asfalttikorjaukset ja vedeneristykset
-          ammattitaidolla taloyhtiöille, yrityksille ja infrakohteisiin.
+      <div class="hero-inner">
+        <span class="hero-tag"><span class="dot" aria-hidden="true"></span>Bitumi- ja infrakorjaukset · Uusimaa &amp; Etelä-Suomi</span>
+        <h1>Asfalttihalkeamat ja bitumikorjaukset ilman turhaa <span class="mark">uudelleenasfaltointia</span>.</h1>
+        <p>
+          B. Bitumi Oy korjaa pihat, saumat, seinänvierustat, reunakivet ja vedeneristykset
+          yli 20 vuoden kokemuksella. Arvioimme kohteen ja ehdotamme järkevän korjaustavan —
+          usein pelkkä bitumi riittää.
         </p>
-
         <div class="hero-actions">
-          <a href="#yhteystiedot" class="btn-primary">
-            Pyydä tarjous
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
+          <a href="yhteystiedot.html" class="btn btn-primary">
+            Pyydä arvio kohteesta
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </a>
-          <a href="#referenssit" class="btn-ghost">Katso referenssit</a>
+          <a href="tel:+358404802955" class="btn btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            Soita 040 480 2955
+          </a>
         </div>
       </div>
     </div>
+  </header>
 
-    <div class="hero-scroll-hint" aria-hidden="true">
-      <div class="scroll-track"></div>
-    </div>
-  </section>
-
-  <!-- ════════════════════ STATS ════════════════════ -->
-  <section class="stats" aria-label="Tilastot">
+  <!-- ══════════════ TRUST STRIP ══════════════ -->
+  <section class="trust" aria-label="B. Bitumi Oy lyhyesti">
     <div class="container">
-      <div class="stats-grid">
-        <div class="stat-card reveal">
-          <div class="stat-num" data-target="20">0</div>
-          <div class="stat-desc">Vuotta kokemusta bitumi- ja infrakorjauksista</div>
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-num">20+</div>
+          <div class="trust-label">Vuoden kokemus bitumi- ja infratöistä</div>
         </div>
-        <div class="stat-card reveal d1">
-          <div class="stat-num" data-target="500">0</div>
-          <div class="stat-desc">Onnistunutta projektia eri kohteissa</div>
+        <div class="trust-item">
+          <div class="trust-num">24/7</div>
+          <div class="trust-label">Päivystys vuoto- ja hätäkorjauksiin</div>
         </div>
-        <div class="stat-card reveal d2">
-          <div class="stat-num">100%</div>
-          <div class="stat-desc">Aidolla ammattikalustolla toteutetut työmaat</div>
+        <div class="trust-item">
+          <div class="trust-num" style="font-size:1.5rem;line-height:1.15;">Luotettava<br>Kumppani</div>
+          <div class="trust-label">Mukana tilaajavastuu.fi-ohjelmassa</div>
         </div>
-        <div class="stat-card reveal d3">
-          <div class="stat-num" style="font-size:1.8rem;letter-spacing:-1px;">Etelä-<br>Suomi</div>
-          <div class="stat-desc">Koko Etelä-Suomen palvelualue</div>
+        <div class="trust-item">
+          <div class="trust-num" style="font-size:1.5rem;line-height:1.15;">Uusimaa &amp;<br>Etelä-Suomi</div>
+          <div class="trust-label">Palvelualue Vantaalta käsin</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════ SERVICES ════════════════════ -->
-  <section class="services" id="palvelut">
+  <!-- ══════════════ PROBLEMS ══════════════ -->
+  <section class="problems" id="ongelmat" aria-labelledby="ongelmat-h">
     <div class="container">
-      <div class="services-header">
-        <div class="section-label reveal">Palvelut</div>
-        <h2 class="section-h reveal d1">
-          Kaikki vaativan<br>infrakorjauksen<br><span class="hl">osaamisalat.</span>
-        </h2>
-        <p class="section-p reveal d2">
-          Erikoistuneet bitumityöt ja infrakorjaukset ammattitaidolla —
-          pienistä kohteista vaativiin infrastruktuuriprojekteihin.
-        </p>
+      <div class="sec-head reveal">
+        <span class="kicker">Milloin meihin kannattaa olla yhteydessä</span>
+        <h2 class="h-sec" id="ongelmat-h">Tutut ongelmat — ja mitä niille <span class="mark">kannattaa tehdä</span></h2>
+        <p class="lead">Useimmat asfaltti- ja bitumiviat eivät vaadi koko pihan uusimista. Tunnistatko jonkin näistä?</p>
       </div>
 
-      <div class="services-grid">
+      <div class="problem-grid">
+        <article class="problem reveal">
+          <span class="problem-no">01</span>
+          <h3>Asfalttihalkeamat</h3>
+          <p>Halkeama päästää veden asfaltin alle. Pakkanen laajentaa sitä joka talvi, ja korjaamaton halkeama kasvaa lopulta kuopaksi ja painaumaksi.</p>
+          <p class="why">Ajoissa tiivistetty halkeama maksaa murto-osan siitä, mitä uudelleenasfaltointi myöhemmin maksaisi.</p>
+          <div class="method"><span class="method-tag">Kuumabitumijuotos</span></div>
+        </article>
 
-        <div class="svc reveal">
-          <div class="svc-index">01</div>
-          <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <rect x="6" y="32" width="36" height="8" rx="1"/>
-            <path d="M12 32V24M20 32V18M28 32V22M36 32V26"/>
-            <circle cx="12" cy="18" r="4"/><circle cx="20" cy="12" r="4"/>
-            <circle cx="28" cy="16" r="4"/><circle cx="36" cy="20" r="4"/>
-          </svg>
-          <div class="svc-name">Kuumabitumijuotokset</div>
-          <div class="svc-desc">Saumajuotokset ja halkeamien täyttö kuumabitumimassoilla. Kestävä ratkaisu asfaltti- ja betonipintojen korjaukseen.</div>
-          <div class="svc-link">Lue lisää <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </div>
+        <article class="problem reveal d1">
+          <span class="problem-no">02</span>
+          <h3>Seinänvierustat ja saumat</h3>
+          <p>Talon vierustan ja asfaltin väliin syntyy rako, josta sulamis- ja sadevedet pääsevät suoraan rakenteisiin ja kellariin.</p>
+          <p class="why">Vesi seinän vieressä on kallista: kuivatus ja kosteusvauriot maksavat moninkertaisesti saumakorjaukseen verrattuna.</p>
+          <div class="method"><span class="method-tag">Kumibitumilista</span></div>
+        </article>
 
-        <div class="svc reveal d1">
-          <div class="svc-index">02</div>
-          <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <path d="M4 40 L44 40"/>
-            <path d="M4 40 L4 28 Q14 16 24 26 Q34 36 44 24 L44 40"/>
-            <path d="M4 28 Q14 14 24 22" stroke-dasharray="3 3" opacity="0.5"/>
-          </svg>
-          <div class="svc-name">Asfalttihalkeamien korjaus</div>
-          <div class="svc-desc">Pitkäkestoiset halkeamakorjaukset erikoismateriaaleilla. Estämme veden tunkeutumisen rakenteisiin tehokkaasti.</div>
-          <div class="svc-link">Lue lisää <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </div>
+        <article class="problem reveal d2">
+          <span class="problem-no">03</span>
+          <h3>Vedeneristykset ja kannet</h3>
+          <p>Pysäköinti- ja sisäpihakannet, autotallien pohjat ja kermikatot alkavat vuotaa, kun vanha vedeneristys on tullut tiensä päähän.</p>
+          <p class="why">Vuotava kansi vaurioittaa alla olevia rakenteita ja tiloja jatkuvasti — vahinko vain kasvaa odottaessa.</p>
+          <div class="method"><span class="method-tag">Valuasfaltti &amp; vedeneristys</span></div>
+        </article>
 
-        <div class="svc reveal d2">
-          <div class="svc-index">03</div>
-          <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <rect x="6" y="18" width="36" height="22" rx="2"/>
-            <path d="M12 18V14 Q24 6 36 14 L36 18"/>
-            <path d="M18 28 L30 28 M24 23 L24 33"/>
-          </svg>
-          <div class="svc-name">Valuasfaltti</div>
-          <div class="svc-desc">Valuasfaltti sillankansiin, pysäköintikansiin ja vaativiin kohteisiin, joissa vaaditaan täydellistä tiiveyttä.</div>
-          <div class="svc-link">Lue lisää <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </div>
-
-        <div class="svc reveal d1">
-          <div class="svc-index">04</div>
-          <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <rect x="6" y="12" width="36" height="24" rx="2"/>
-            <path d="M6 20 L42 20 M6 28 L42 28"/>
-            <path d="M16 12 L16 36 M32 12 L32 36"/>
-            <path d="M3 42 L45 42" stroke-dasharray="4 2" opacity="0.5"/>
-          </svg>
-          <div class="svc-name">Vedeneristys</div>
-          <div class="svc-desc">Kattavat vedeneristysratkaisut perustuksiin, kattoihin, siltoihin ja muihin kriittisiin rakenteisiin.</div>
-          <div class="svc-link">Lue lisää <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </div>
-
-        <div class="svc reveal d2">
-          <div class="svc-index">05</div>
-          <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <path d="M4 40 L44 40"/>
-            <rect x="6" y="30" width="9" height="10"/>
-            <rect x="19" y="24" width="9" height="16"/>
-            <rect x="32" y="33" width="9" height="7"/>
-            <path d="M6 30 L19 24 M28 24 L32 33"/>
-          </svg>
-          <div class="svc-name">Reunakivityöt</div>
-          <div class="svc-desc">Reunakivien asennus ja korjaus graniitista betonikiviin. Infrastruktuurin viimeistely laadukkaasti ja kestävästi.</div>
-          <div class="svc-link">Lue lisää <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </div>
-
-        <div class="svc reveal d3">
-          <div class="svc-index">06</div>
-          <svg class="svc-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-            <circle cx="24" cy="24" r="16"/>
-            <path d="M24 12 L24 24 L33 33"/>
-            <path d="M12 24 L8 24 M36 24 L40 24 M24 12 L24 8 M24 40 L24 36"/>
-          </svg>
-          <div class="svc-name">Kuntokartoitukset</div>
-          <div class="svc-desc">Ammattimainen infrastruktuurin kuntoarviointi. Selvitetään vauriot ja kustannustehokkain korjausohjelma.</div>
-          <div class="svc-link">Lue lisää <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        </div>
-
+        <article class="problem reveal d3">
+          <span class="problem-no">04</span>
+          <h3>Reunakivet ja pienet infrakorjaukset</h3>
+          <p>Irronneet tai painuneet reunakivet, kaivojen ympärykset ja pienet pintapaikkaukset jäävät helposti roikkumaan isompaa urakkaa odottamaan.</p>
+          <p class="why">Pienet viat ehtii hoitaa kuntoon yhdellä käynnillä — ennen kuin niistä kasvaa kalliimpi ongelma.</p>
+          <div class="method"><span class="method-tag">Reunakivi- ja paikkaustyöt</span></div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════ WHY ════════════════════ -->
-  <section class="why" id="miksi" aria-labelledby="why-heading">
-    <div class="why-bg-text" aria-hidden="true">BBITUMI</div>
+  <!-- ══════════════ KUNTOKARTOITUS / SÄÄSTÖVIESTI ══════════════ -->
+  <section class="saving" id="kuntokartoitus" aria-labelledby="saving-h">
+    <div class="container">
+      <div class="saving-grid">
+        <div class="reveal">
+          <span class="kicker">Kuntokartoitus</span>
+          <h2 id="saving-h">Uudelleenasfaltointi ei aina ole <span class="mark">tarpeen</span>.</h2>
+          <p>
+            Maa elää, ja asfalttiin syntyy halkeamia ja painaumia ajan myötä. Se ei kuitenkaan
+            tarkoita, että koko piha pitäisi asfaltoida uudelleen. Käymme kohteen läpi, arvioimme
+            vaurioiden laajuuden ja kerromme suoraan, mikä korjaustapa on järkevin — ja mitä se
+            maksaa verrattuna täyteen uudelleenasfaltointiin.
+          </p>
+          <p>
+            Sopii taloyhtiöille, yrityspihoille, pysäköintialueille ja kuntien infrakohteisiin.
+          </p>
+          <div class="saving-actions">
+            <a href="kuntokartoitukset.html" class="btn btn-on-paper">
+              Lue lisää kuntokartoituksesta
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="steps reveal d1">
+          <div class="step">
+            <span class="step-no">01</span>
+            <div>
+              <h4>Kartoituskäynti</h4>
+              <p>Käymme kohteessa paikan päällä ja arvioimme halkeamien ja painaumien laajuuden ja tyypin.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-no">02</span>
+            <div>
+              <h4>Kirjallinen arvio</h4>
+              <p>Saat selkeän arvion siitä, mitä voidaan korjata bitumilla ja milloin uudelleenasfaltointi on aidosti tarpeen.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-no">03</span>
+            <div>
+              <h4>Kustannusvertailu</h4>
+              <p>Näet rinnakkain bitumikorjauksen ja täyden uudelleenasfaltoinnin hinnan — päätös on helpompi tehdä.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ SERVICES ══════════════ -->
+  <section class="services" id="palvelut" aria-labelledby="palvelut-h">
+    <div class="container">
+      <div class="sec-head reveal">
+        <span class="kicker">Palvelut</span>
+        <h2 class="h-sec" id="palvelut-h">Mitä <span class="mark">teemme</span></h2>
+        <p class="lead">Bitumi- ja infrakorjaukset omalla kalustolla ja käytännön kokemuksella — pienistä saumoista kokonaisiin piha- ja kansikohteisiin.</p>
+      </div>
+
+      <div class="svc-grid">
+        <article class="svc reveal">
+          <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 20h18M5 20V9l4-3 4 4 6-3v13"/></svg></div>
+          <h3>Kuumabitumijuotokset</h3>
+          <p>Halkeamien ja saumojen täyttö kuumalla bitumilla. Bitumi tarttuu hyvin alustaan ja kestää oikein tehtynä vuosia.</p>
+          <a href="bitumi.html" class="svc-link">Lue lisää <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        </article>
+
+        <article class="svc reveal d1">
+          <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 18h18M7 18l3-13 2 6 2-4 2 11"/></svg></div>
+          <h3>Halkeamakorjaukset</h3>
+          <p>Asfalttihalkeamien tiivistys ennen kuin vesi pääsee rakenteisiin. Estää halkeaman laajenemisen ja pintavauriot.</p>
+          <a href="kuntokartoitukset.html" class="svc-link">Lue lisää <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        </article>
+
+        <article class="svc reveal d2">
+          <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 19h18M6 19l6-12 6 12M9 19l3-6 3 6"/></svg></div>
+          <h3>Kumibitumilista</h3>
+          <p>Joustava, kolmion muotoinen tiiviste leveämpiin saumoihin ja seinänvierustoihin. Muotoutuu siististi ja tekee saumasta vesitiiviin.</p>
+          <a href="bitumi.html" class="svc-link">Lue lisää <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        </article>
+
+        <article class="svc reveal">
+          <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="13" width="18" height="8"/><path d="M3 13l9-9 9 9"/></svg></div>
+          <h3>Valuasfaltti</h3>
+          <p>Tiivis valuasfalttipinta kansille, pysäköintitasoille ja kohteisiin, joissa vaaditaan täyttä vesitiiveyttä.</p>
+        </article>
+
+        <article class="svc reveal d1">
+          <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 7h18v10H3zM3 11h18M3 15h18M9 7v10M15 7v10"/></svg></div>
+          <h3>Vedeneristys</h3>
+          <p>Vedeneristykset kansille, sisäpihoille, autotallien pohjille ja katoille. Suojaa rakenteet vedeltä ja kosteudelta.</p>
+        </article>
+
+        <article class="svc reveal d2">
+          <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 20h18M5 20v-6h5v6M14 20v-9h5v9"/></svg></div>
+          <h3>Reunakivityöt</h3>
+          <p>Reunakivien asennus ja korjaus — myös liimattavat reunakivet. Viimeistelee pihat ja liikennealueet kestävästi.</p>
+        </article>
+
+        <article class="svc reveal">
+          <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 4h12l4 4v12H4zM9 12l2 2 4-4"/></svg></div>
+          <h3>Kuntokartoitukset</h3>
+          <p>Kohteen arviointi ja kirjallinen korjaussuunnitelma ennen isoja päätöksiä — usein säästät uudelleenasfaltoinnin kustannuksen.</p>
+          <a href="kuntokartoitukset.html" class="svc-link">Lue lisää <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        </article>
+
+        <article class="svc reveal d1" style="justify-content:center;background:var(--accent);color:#1a1205;">
+          <h3 style="color:#1a1205;">Etkö ole varma mitä kohteesi tarvitsee?</h3>
+          <p style="color:#3a2a0e;">Lähetä kuvat kohteesta, niin kerromme suoraan järkevimmän korjaustavan.</p>
+          <a href="yhteystiedot.html" class="svc-link" style="color:#1a1205;">Ota yhteyttä <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ WORKSITE GALLERY ══════════════ -->
+  <section class="gallery" id="kuvat" aria-labelledby="kuvat-h">
+    <div class="container">
+      <div class="gallery-head">
+        <div class="reveal">
+          <span class="kicker">Työmaakuvat</span>
+          <h2 class="h-sec" id="kuvat-h">Tehtyä työtä, <span class="mark">ei kuvapankkia</span></h2>
+        </div>
+        <a href="kuvat.html" class="btn btn-ghost reveal d1">
+          Katso koko kuvagalleria
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="shot reveal">
+          <img src="img/halkeama-ennen.jpg" loading="lazy" alt="Korjattavissa oleva asfalttihalkeama ennen kuumabitumijuotosta"
+               onerror="this.parentElement.innerHTML='<div class=&quot;shot-fallback&quot;>Työmaakuva</div>'" />
+          <figcaption>Korjattavissa oleva asfalttihalkeama — ennen korjausta</figcaption>
+        </figure>
+        <figure class="shot reveal d1">
+          <img src="img/kumibitumilista-asennus.jpg" loading="lazy" alt="Kumibitumilistan asennus koneella asfalttisaumaan"
+               onerror="this.parentElement.innerHTML='<div class=&quot;shot-fallback&quot;>Työmaakuva</div>'" />
+          <figcaption>Kumibitumilistan asennus koneellisesti</figcaption>
+        </figure>
+        <figure class="shot reveal d2">
+          <img src="img/asfalttipaikkaus.jpg" loading="lazy" alt="Valmis asfalttipaikkaus työkohteessa"
+               onerror="this.parentElement.innerHTML='<div class=&quot;shot-fallback&quot;>Työmaakuva</div>'" />
+          <figcaption>Laadukas asfalttipaikkaus</figcaption>
+        </figure>
+        <figure class="shot reveal">
+          <img src="img/reunakivet.jpg" loading="lazy" alt="Liimattavien reunakivien asennustyö"
+               onerror="this.parentElement.innerHTML='<div class=&quot;shot-fallback&quot;>Työmaakuva</div>'" />
+          <figcaption>Liimattavien reunakivien asennus ja korjaus</figcaption>
+        </figure>
+        <figure class="shot reveal d1">
+          <img src="img/autokannen-eristys.jpg" loading="lazy" alt="Autotallin kannen pohjaeristys vesitiiviiksi"
+               onerror="this.parentElement.innerHTML='<div class=&quot;shot-fallback&quot;>Työmaakuva</div>'" />
+          <figcaption>Autokannen pohjaeristys vesitiiviiksi</figcaption>
+        </figure>
+        <figure class="shot reveal d2">
+          <img src="img/kermieristys.jpg" loading="lazy" alt="Kerrostalon sisäpihan kermieristystyö"
+               onerror="this.parentElement.innerHTML='<div class=&quot;shot-fallback&quot;>Työmaakuva</div>'" />
+          <figcaption>Kerrostalon sisäpihan kermieristys</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ WHY US ══════════════ -->
+  <section class="why" id="miksi" aria-labelledby="miksi-h">
     <div class="container">
       <div class="why-grid">
-
-        <div class="why-left">
-          <div class="section-label reveal-left">Miksi BBITUMI</div>
-          <h2 class="section-h reveal-left d1" id="why-heading">
-            Infra-ala vaatii<br>enemmän kuin<br><span class="hl">perustason.</span>
-          </h2>
-          <p class="reveal-left d2">
-            BBITUMI on perustettu vastaamaan vaativien infra- ja
-            bitumitöiden todellisiin tarpeisiin. Emme tarjoa
-            tavanomaisia ratkaisuja, vaan räätälöidymme jokaisen
-            kohteen mukaan ammattitaidolla ja oikealla kalustolla.
+        <div class="reveal">
+          <span class="kicker">Miksi B. Bitumi Oy</span>
+          <h2 class="h-sec" id="miksi-h">Oikea osaaja, <span class="mark">oikeat luvat</span></h2>
+          <p class="lead">
+            B. Bitumi Oy on Vantaalainen, bitumin käyttöön erikoistunut yritys. Henkilökunnalla on
+            yli 20 vuoden kokemus alalta sekä kaikki työmailla vaadittavat pätevyydet ja kurssit.
+            Käytämme vain hyväksi havaittuja työmenetelmiä ja materiaaleja.
           </p>
-          <p class="reveal-left d3" style="margin-top:14px; font-size:1.05rem; color:var(--muted); line-height:1.85; font-weight:300;">
-            20 vuoden kokemus on opettanut, että kestävä tulos syntyy
-            oikeista materiaaleista, oikeista menetelmistä ja oikeaan
-            aikaan tehdystä työstä.
-          </p>
+          <div class="why-badge">
+            <img src="img/luotettava-kumppani.png" alt="Luotettava Kumppani — tilaajavastuu.fi" />
+            <span><strong>Luotettava Kumppani</strong>Lakisääteiset velvoitteet hoidettu — tilaajavastuu.fi</span>
+          </div>
         </div>
 
-        <div class="why-features">
-
-          <div class="feat reveal-right d1">
-            <div class="feat-ico">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
-              </svg>
-            </div>
-            <div class="feat-body">
-              <h4>Erikoistunut kalusto</h4>
-              <p>Oma ammattikalusto bitumitöihin — ei alihankinnan varassa.</p>
-            </div>
+        <div class="why-list reveal d1">
+          <div class="why-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            <div><h4>Yli 20 v kokemus</h4><p>Käytännön kokemusta bitumi- ja infrakorjauksista.</p></div>
           </div>
-
-          <div class="feat reveal-right d2">
-            <div class="feat-ico">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
-              </svg>
-            </div>
-            <div class="feat-body">
-              <h4>Nopea reagointi</h4>
-              <p>Tarjous 24h sisällä. Aloitus sovitussa aikataulussa.</p>
-            </div>
+          <div class="why-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>
+            <div><h4>Tulityökortti</h4><p>Edellytys kuumabitumimassojen turvalliseen käsittelyyn.</p></div>
           </div>
-
-          <div class="feat reveal-right d3">
-            <div class="feat-ico">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
-              </svg>
-            </div>
-            <div class="feat-body">
-              <h4>Koko Etelä-Suomi</h4>
-              <p>Helsinki, Espoo, Vantaa, Tampere ja kaikki ympäryskunnat.</p>
-            </div>
+          <div class="why-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-5-7-11a7 7 0 0 1 14 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <div><h4>Tieturva 1</h4><p>Turvallinen työskentely liikennealueilla ja kaduilla.</p></div>
           </div>
-
-          <div class="feat reveal-right d4">
-            <div class="feat-ico">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-            </div>
-            <div class="feat-body">
-              <h4>Laaduntarkistus &amp; takuu</h4>
-              <p>Jokainen kohde tarkastetaan valmistumisen jälkeen. Kirjallinen takuu.</p>
-            </div>
+          <div class="why-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.5V12a10 10 0 1 1-5.9-9.1"/><path d="M22 4 12 14l-3-3"/></svg>
+            <div><h4>Työturvallisuuskortti</h4><p>Voimassa kaikilla työmaille menevällä henkilökunnalla.</p></div>
           </div>
-
-          <div class="feat reveal-right d5">
-            <div class="feat-ico">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
-              </svg>
-            </div>
-            <div class="feat-body">
-              <h4>Pitkäaikaiset asiakassuhteet</h4>
-              <p>Taloyhtiöt, kunnat ja yritykset palaavat luoksemme uusien projektien kanssa.</p>
-            </div>
+          <div class="why-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 12h-4l-3 8L9 4l-3 8H2"/></svg>
+            <div><h4>Ensiapukoulutus</h4><p>EA1-tasoinen ensiapuosaaminen jokaisella työmaalla.</p></div>
           </div>
-
+          <div class="why-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 20h18M6 20v-7l6-4 6 4v7M10 20v-4h4v4"/></svg>
+            <div><h4>Oma kalusto</h4><p>Bitumityöt omalla ammattikalustolla — emme jää alihankinnan varaan.</p></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════ REFERENSSIT ════════════════════ -->
-  <section class="refs" id="referenssit">
+  <!-- ══════════════ CONTACT / CTA ══════════════ -->
+  <section class="contact" id="yhteystiedot" aria-labelledby="yhteys-h">
     <div class="container">
-      <div class="refs-top">
-        <div>
-          <div class="section-label reveal">Referenssit</div>
-          <h2 class="section-h reveal d1">
-            Työmaat puhuvat<br><span class="hl">puolestaan.</span>
-          </h2>
-        </div>
-        <p class="section-p reveal d2" style="margin-top:0; max-width:360px;">
-          Valittuja esimerkkejä toteutetuista projekteista
-          taloyhtiöiltä siltakohteisiin.
-        </p>
+      <div class="contact-head reveal">
+        <span class="kicker">Ota yhteyttä</span>
+        <h2 class="h-sec" id="yhteys-h">Soita ja kysy <span class="mark">arviota kohteesta</span></h2>
+        <p class="lead">Kerromme suoraan, mitä kohteesi tarvitsee — ja mitä se maksaa. Arvio on maksuton.</p>
       </div>
 
-      <div class="refs-grid">
+      <div class="contact-actions">
+        <a class="ca reveal" href="tel:+358404802955">
+          <div class="ca-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div>
+          <h3>Soita ja kysy arviota</h3>
+          <p>Kerro lyhyesti kohteesta, niin sanomme heti onnistuuko se bitumilla.</p>
+          <span class="ca-do">040 480 2955</span>
+        </a>
+        <a class="ca reveal d1" href="mailto:juha_valiviita@hotmail.com?subject=Tarjouspyynt%C3%B6%20%E2%80%93%20kuvat%20kohteesta">
+          <div class="ca-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg></div>
+          <h3>Lähetä kuvat kohteesta</h3>
+          <p>Liitä sähköpostiin pari kuvaa halkeamista tai saumoista — arvioimme tilanteen niiden perusteella.</p>
+          <span class="ca-do">Lähetä sähköposti</span>
+        </a>
+        <a class="ca reveal d2" href="kuntokartoitukset.html">
+          <div class="ca-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M4 4h12l4 4v12H4z"/><path d="M8 12h8M8 16h5M8 8h4"/></svg></div>
+          <h3>Pyydä kuntokartoitus</h3>
+          <p>Arvioimme kohteen ja kerromme onko uudelleenasfaltointi tarpeen vai riittääkö korjaus.</p>
+          <span class="ca-do">Varaa kartoituskäynti</span>
+        </a>
+      </div>
 
-        <!-- Case 1 – iso -->
-        <div class="ref-card span2 reveal">
-          <div class="ref-thumb">
-            <div class="ref-bg ref-bg-a"></div>
-            <div class="ref-grad"></div>
-            <div class="ref-pill">Valuasfaltti</div>
-          </div>
-          <div class="ref-body">
-            <div class="ref-loc">Helsinki &middot; 2024</div>
-            <div class="ref-title">Siltakannen valuasfaltti &amp; vedeneristys, Hermannin silta</div>
-            <div class="ref-desc">
-              Liikenteen alla toteutettu kokonaisvaltainen siltakansiremontti.
-              Vanha rakenne purettiin, suoritettiin täydellinen vedeneristys ja
-              valuasfalttipinnoite liikennerasituksen vaatimusten mukaisesti.
-              Projekti valmistui aikataulussa minimoiden liikenteen häiriöt.
-            </div>
-            <div class="ref-tags">
-              <span class="ref-tag">Valuasfaltti</span>
-              <span class="ref-tag">Vedeneristys</span>
-              <span class="ref-tag">Siltatekniikka</span>
-              <span class="ref-tag">Helsinki</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Case 2 -->
-        <div class="ref-card reveal d1">
-          <div class="ref-thumb">
-            <div class="ref-bg ref-bg-b"></div>
-            <div class="ref-grad"></div>
-            <div class="ref-pill">Halkeamakorjaus</div>
-          </div>
-          <div class="ref-body">
-            <div class="ref-loc">Espoo &middot; 2024</div>
-            <div class="ref-title">Taloyhtiön pysäköintialueen halkeamakorjaukset</div>
-            <div class="ref-desc">
-              200+ jm halkeamia täytetty kuumabitumimassoilla.
-              Kohde toimintakunnossa jo seuraavana päivänä. Takuu 3 v.
-            </div>
-            <div class="ref-tags">
-              <span class="ref-tag">Kuumabitumijuotos</span>
-              <span class="ref-tag">Taloyhtiö</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Case 3 -->
-        <div class="ref-card reveal d2">
-          <div class="ref-thumb">
-            <div class="ref-bg ref-bg-c"></div>
-            <div class="ref-grad"></div>
-            <div class="ref-pill">Kuntokartoitus</div>
-          </div>
-          <div class="ref-body">
-            <div class="ref-loc">Vantaa &middot; 2023</div>
-            <div class="ref-title">Logistiikkakeskuksen piha-alueen kuntoarvio &amp; korjaus</div>
-            <div class="ref-desc">
-              Raskaalle liikenteelle altistuneen piha-alueen täydellinen
-              kuntokartoitus ja kustannusoptimoitu korjausohjelma toteutettiin kokonaisuudessaan.
-            </div>
-            <div class="ref-tags">
-              <span class="ref-tag">Kuntokartoitus</span>
-              <span class="ref-tag">Asfalttikorjaus</span>
-            </div>
-          </div>
-        </div>
-
+      <div class="contact-direct">
+        <a class="cd reveal" href="tel:+358404802955" aria-label="Soita numeroon 040 480 2955">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          <span>
+            <span class="cd-label">Puhelin</span>
+            <span class="cd-val">040 480 2955</span>
+          </span>
+        </a>
+        <a class="cd reveal d1" href="mailto:juha_valiviita@hotmail.com" aria-label="Lähetä sähköpostia">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg>
+          <span>
+            <span class="cd-label">Sähköposti</span>
+            <span class="cd-val" style="font-size:clamp(1rem,1.8vw,1.25rem);">juha_valiviita@hotmail.com</span>
+          </span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════ CTA ════════════════════ -->
-  <section class="cta-band" id="yhteystiedot" aria-labelledby="cta-heading">
-    <div class="container">
-      <div class="cta-inner">
-        <div class="section-label reveal">Ota yhteyttä</div>
-        <h2 class="section-h reveal d1" id="cta-heading">
-          Valmis aloittamaan<br><span class="hl">projektin?</span>
-        </h2>
-        <p class="section-p reveal d2">
-          Pyydä ilmainen tarjous — vastaamme 24 tunnin sisällä.
-          Kaikenkokoiset kohteet, koko Etelä-Suomi.
-        </p>
-
-        <div class="cta-btns reveal d3">
-          <a href="mailto:juha_valiviita@hotmail.com" class="btn-primary">
-            Lähetä tarjouspyyntö
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-          <a href="tel:+358404802955" class="btn-ghost">Soita meille</a>
-        </div>
-
-        <div class="cta-contacts reveal d4">
-          <div class="cc-item">
-            <div class="cc-label">Sähköposti</div>
-            <a href="mailto:juha_valiviita@hotmail.com" class="cc-val">juha_valiviita@hotmail.com</a>
-          </div>
-          <div class="cc-item">
-            <div class="cc-label">Puhelin</div>
-            <a href="tel:+358404802955" class="cc-val">040 480 2955</a>
-          </div>
-          <div class="cc-item">
-            <div class="cc-label">Toimialue</div>
-            <div class="cc-val">Etelä-Suomi</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ════════════════════ FOOTER ════════════════════ -->
-  <footer class="footer" aria-label="Alatunniste">
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#" class="logo">BB<span class="o">I</span>TUMI</a>
-          <p>Premium bitumi- ja infrakorjaukset vaativiin kohteisiin koko Etelä-Suomessa. 20+ vuoden ammattikokemus.</p>
+          <img src="bitumi-logo.png" alt="B. Bitumi Oy" />
+          <p>B. Bitumi Oy korjaa bitumi- ja asfalttikohteet Uudellamaalla ja Etelä-Suomessa. Yli 20 vuoden käytännön kokemus.</p>
         </div>
         <div class="footer-col">
-          <h6>Palvelut</h6>
-          <ul>
-            <li><a href="#palvelut">Kuumabitumijuotokset</a></li>
-            <li><a href="#palvelut">Asfalttihalkeamat</a></li>
-            <li><a href="#palvelut">Valuasfaltti</a></li>
-            <li><a href="#palvelut">Vedeneristys</a></li>
-            <li><a href="#palvelut">Reunakivityöt</a></li>
-            <li><a href="#palvelut">Kuntokartoitukset</a></li>
-          </ul>
+          <h5>Palvelut</h5>
+          <a href="bitumi.html">Kuumabitumijuotokset</a>
+          <a href="bitumi.html">Kumibitumilista</a>
+          <a href="kuntokartoitukset.html">Halkeamakorjaukset</a>
+          <a href="kuntokartoitukset.html">Kuntokartoitukset</a>
+          <a href="#palvelut">Valuasfaltti &amp; vedeneristys</a>
+          <a href="#palvelut">Reunakivityöt</a>
         </div>
         <div class="footer-col">
-          <h6>Yritys</h6>
-          <ul>
-            <li><a href="#miksi">Miksi BBITUMI</a></li>
-            <li><a href="#referenssit">Referenssit</a></li>
-            <li><a href="#">Yritysesittely</a></li>
-          </ul>
+          <h5>Yritys</h5>
+          <a href="yritys.html">Yritysesittely</a>
+          <a href="kuvat.html">Työmaakuvat</a>
+          <a href="#miksi">Miksi B. Bitumi Oy</a>
+          <a href="yhteystiedot.html">Yhteystiedot</a>
         </div>
         <div class="footer-col">
-          <h6>Yhteystiedot</h6>
-          <ul>
-            <li><a href="mailto:juha_valiviita@hotmail.com">juha_valiviita@hotmail.com</a></li>
-            <li><a href="tel:+358404802955">040 480 2955</a></li>
-            <li><a href="#">Helsinki · Espoo · Vantaa</a></li>
-            <li><a href="#">Tampere ja ympäristö</a></li>
-          </ul>
+          <h5>Yhteystiedot</h5>
+          <p>Juha Väliviita</p>
+          <a href="tel:+358404802955">040 480 2955</a>
+          <a href="mailto:juha_valiviita@hotmail.com">juha_valiviita@hotmail.com</a>
+          <p>Liekokuja 5b, 01300 Vantaa</p>
+          <p>Y-tunnus 2613792-9</p>
         </div>
       </div>
-
       <div class="footer-bottom">
-        <p>&copy; 2025 <span class="acc">BBITUMI</span>. Kaikki oikeudet pidätetään.</p>
-        <p>Premium infrakorjaukset &middot; Etelä-Suomi</p>
+        <p>&copy; 2025 B. Bitumi Oy. Kaikki oikeudet pidätetään.</p>
+        <p>Bitumi- ja infrakorjaukset · Uusimaa &amp; Etelä-Suomi</p>
       </div>
     </div>
   </footer>
 
-  <!-- ════════════════════ JS ════════════════════ -->
   <script>
-    // Navbar scroll
-    const navbar = document.getElementById('navbar');
-    const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 20);
+    // Sticky nav state
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 16);
+    onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
 
     // Mobile menu
-    const ham = document.getElementById('ham');
-    const mobMenu = document.getElementById('mobMenu');
-    ham.addEventListener('click', () => {
-      ham.classList.toggle('open');
-      mobMenu.classList.toggle('open');
+    const burger = document.getElementById('burger');
+    const mobile = document.getElementById('mobile');
+    burger.addEventListener('click', () => {
+      const open = burger.classList.toggle('open');
+      mobile.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? 'Sulje valikko' : 'Avaa valikko');
     });
-    mobMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      ham.classList.remove('open');
-      mobMenu.classList.remove('open');
+    mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      burger.classList.remove('open');
+      mobile.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
     }));
 
     // Scroll reveal
-    const ro = new IntersectionObserver((entries) => {
+    const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('in');
-          ro.unobserve(e.target);
-        }
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => ro.observe(el));
-
-    // Counter animation
-    const co = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (!e.isIntersecting) return;
-        const el = e.target;
-        const target = parseInt(el.dataset.target, 10);
-        if (!target) return;
-        const suffix = target >= 100 ? '+' : '+';
-        let start = null;
-        const dur = 1400;
-        const step = (ts) => {
-          if (!start) start = ts;
-          const progress = Math.min((ts - start) / dur, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          el.textContent = Math.floor(eased * target) + suffix;
-          if (progress < 1) requestAnimationFrame(step);
-        };
-        requestAnimationFrame(step);
-        co.unobserve(el);
-      });
-    }, { threshold: 0.5 });
-
-    document.querySelectorAll('[data-target]').forEach(el => co.observe(el));
-
-    // Smooth anchor scroll (for browsers without native support)
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const id = a.getAttribute('href');
-        if (id === '#') return;
-        const target = document.querySelector(id);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   </script>
 </body>
 </html>
