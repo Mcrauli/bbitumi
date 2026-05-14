@@ -213,7 +213,7 @@ section { padding: clamp(60px, 8vw, 104px) 0; }
   background: var(--ink-3);
   border-bottom: 2px solid var(--line);
   flex-direction: column;
-  padding: 8px 0 16px;
+  padding: 8px 0 0;
 }
 .mobile.open { display: flex; }
 .mobile a {
@@ -226,6 +226,7 @@ section { padding: clamp(60px, 8vw, 104px) 0; }
   color: var(--text-dim);
   border-bottom: 1px solid var(--line);
 }
+.mobile a:last-child { border-bottom: none; }
 .mobile a:hover, .mobile a[aria-current="page"] { color: var(--accent); }
 .mobile .m-cta {
   margin: 14px 4% 0;
