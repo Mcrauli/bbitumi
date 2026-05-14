@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Bitumi – kuumabitumijuotokset, kumibitumilista ja vedeneristysratkaisut. B. Bitumi Oy, Vantaa." />
+  <meta name="description" content="Kuumabitumijuotos ja kumibitumilista — B. Bitumi Oy:n bitumimenetelmät asfalttihalkeamien, saumojen ja seinänvierustojen korjaukseen. Vantaa, Uusimaa, Etelä-Suomi." />
   <title>Bitumi — kuumabitumijuotos &amp; kumibitumilista | B. Bitumi Oy</title>
   <link rel="icon" href="bitumi-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,329 +11,270 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 52px;
-    }
-    .process-card {
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      background: var(--bg2);
-      transition: border-color var(--t), transform .6s var(--ease);
-    }
-    .process-card:hover {
-      border-color: var(--border-warm);
-      transform: translateY(-4px);
-    }
-    .process-img {
-      height: 220px;
-      overflow: hidden;
-      background: linear-gradient(135deg,#1a1508,#111);
-    }
-    .process-img img {
-      width:100%; height:100%; object-fit:cover;
-      transition: transform .7s var(--ease);
-    }
-    .process-card:hover .process-img img { transform: scale(1.05); }
-    .process-caption {
-      padding: 20px 22px;
-      font-size: .82rem;
-      color: var(--muted);
-      line-height: 1.65;
-      border-top: 1px solid var(--border);
-    }
+    .method { padding: clamp(56px, 8vw, 100px) 0; }
+    .method.alt { background: var(--ink-2); border-block: 1px solid var(--line); }
+    .method-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .method.flip .method-grid { direction: rtl; }
+    .method.flip .method-grid > * { direction: ltr; }
+    .method-text p { color: var(--text-dim); margin-top: 16px; }
+    .method-img { border: 1px solid var(--line); overflow: hidden; }
+    .method-img img { width: 100%; height: 100%; min-height: 320px; object-fit: cover; aspect-ratio: 5/4; }
 
-    .two-img { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:20px; }
+    .uses { margin-top: 24px; display: flex; flex-direction: column; }
+    .use {
+      display: flex; align-items: center; gap: 14px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.97rem; color: var(--text);
+    }
+    .use:first-child { border-top: 1px solid var(--line); }
+    .use::before { content: ''; width: 7px; height: 7px; min-width: 7px; background: var(--accent); }
 
-    .method-section { margin-top: 80px; padding-top: 64px; border-top: 1px solid var(--border); }
-    .method-section:first-child { margin-top:0; padding-top:0; border-top:none; }
+    .process { margin-top: 44px; }
+    .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .pcard { background: var(--ink); }
+    .method.alt .pcard { background: var(--ink-3); }
+    .pcard-img { aspect-ratio: 4/3; overflow: hidden; background: var(--ink-2); }
+    .pcard-img img { width: 100%; height: 100%; object-fit: cover; }
+    .pcard-cap { padding: 18px 20px; font-size: 0.9rem; color: var(--text-dim); line-height: 1.6; }
+    .pcard-cap strong { color: var(--accent); font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; }
+    .two-img { display: grid; grid-template-columns: 1fr 1fr; margin-top: 2px; }
 
-    .method-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; margin-top:48px; }
-    .method-grid.flip { direction:rtl; }
-    .method-grid.flip > * { direction:ltr; }
-
-    .method-text p {
-      font-size:1rem; color:var(--muted); line-height:1.85; font-weight:300; margin-top:20px;
-    }
-    .method-uses {
-      margin-top: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-    .method-use-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: .9rem;
-      color: var(--muted);
-    }
-    .method-use-item:first-child { border-top: 1px solid var(--border); }
-    .method-use-item::before {
-      content: '';
-      display: block;
-      width: 6px;
-      height: 6px;
-      min-width: 6px;
-      background: var(--accent);
-      border-radius: 50%;
-    }
-
-    .method-img-wrap {
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-    .method-img-wrap img {
-      width:100%; height:360px; object-fit:cover;
-      transition: transform .7s var(--ease);
-    }
-    .method-img-wrap:hover img { transform: scale(1.03); }
-
-    @media(max-width:768px) {
-      .process-grid { grid-template-columns:1fr; }
-      .two-img { grid-template-columns:1fr; }
-      .method-grid { grid-template-columns:1fr; gap:32px; }
-      .method-grid.flip { direction:ltr; }
+    @media (max-width: 820px) {
+      .method-grid { grid-template-columns: 1fr; gap: 32px; }
+      .method.flip .method-grid { direction: ltr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .two-img { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <nav class="navbar" id="navbar">
+  <nav class="nav" id="nav">
     <div class="container nav-inner">
-      <a href="index.html" class="logo" aria-label="B. Bitumi Oy — etusivu"><img src="bitumi-logo.png" alt="B. Bitumi Oy"></a>
+      <a href="index.html" class="brand" aria-label="B. Bitumi Oy — etusivu"><img src="bitumi-logo.png" alt="B. Bitumi Oy"></a>
       <div class="nav-links">
         <a href="index.html">Etusivu</a>
         <a href="kuntokartoitukset.html">Kuntokartoitukset</a>
-        <a href="bitumi.html" class="active">Bitumi</a>
-        <a href="yhteystiedot.html">Yhteystiedot</a>
+        <a href="bitumi.html" aria-current="page">Bitumi</a>
+        <a href="kuvat.html">Kuvat</a>
         <a href="yritys.html">Yritys</a>
-        <a href="yhteystiedot.html" class="nav-cta">Pyydä arvio</a>
+        <a href="yhteystiedot.html">Yhteystiedot</a>
+        <a href="tel:+358404802955" class="nav-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          040 480 2955
+        </a>
       </div>
-      <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
+      <button class="burger" id="burger" aria-label="Avaa valikko" aria-expanded="false" aria-controls="mobile"><span></span><span></span><span></span></button>
     </div>
   </nav>
-  <div class="mob-menu" id="mobMenu">
+  <div class="mobile" id="mobile">
     <a href="index.html">Etusivu</a>
     <a href="kuntokartoitukset.html">Kuntokartoitukset</a>
-    <a href="bitumi.html" class="active">Bitumi</a>
-    <a href="yhteystiedot.html">Yhteystiedot</a>
-    <a href="yritys.html">Yritys</a>
+    <a href="bitumi.html" aria-current="page">Bitumi</a>
     <a href="kuvat.html">Kuvat</a>
-    <a href="yhteystiedot.html" class="mob-cta">Pyydä arvio</a>
+    <a href="yritys.html">Yritys</a>
+    <a href="yhteystiedot.html">Yhteystiedot</a>
+    <a href="tel:+358404802955" class="m-cta">Soita 040 480 2955</a>
   </div>
 
   <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="page-hero-bg" aria-hidden="true">BITUMI</div>
+  <header class="page-hero" data-ghost="BITUMI">
+    <div class="container page-hero-inner">
+      <nav class="breadcrumb" aria-label="Murupolku">
+        <a href="index.html">Etusivu</a><span class="sep">/</span><span>Bitumi</span>
+      </nav>
+      <h1>Bitumia voidaan käyttää <span class="mark">monenlaiseen</span> tarkoitukseen</h1>
+      <p class="page-hero-sub">Kuumabitumijuotokset ja kumibitumilista — kestävät menetelmät asfalttihalkeamien, saumojen ja seinänvierustojen korjaukseen.</p>
+    </div>
+    <div class="hazard"></div>
+  </header>
+
+  <!-- METHOD 01 — KUUMABITUMIJUOTOS -->
+  <section class="method">
     <div class="container">
-      <div class="breadcrumb reveal"><a href="index.html">Etusivu</a><span class="sep">/</span><span>Bitumi</span></div>
-      <h1 class="reveal d1">Bitumia voidaan käyttää<br><span class="hl">monenlaiseen</span> tarkoitukseen.</h1>
-      <p class="page-hero-sub reveal d2">Kuumabitumijuotokset, kumibitumilista ja vedeneristysratkaisut ammattitaidolla.</p>
+      <span class="kicker reveal">Menetelmä 01</span>
+      <div class="method-grid">
+        <div class="method-text reveal">
+          <h2 class="h-sec"><span class="mark">Kuumabitumi</span>juotos</h2>
+          <p>
+            Kuumabitumijuotoksessa nestemäiseksi kuumennettua bitumia käytetään rakenteiden
+            korjaamiseen. Kuumennettu bitumi tarttuu hyvin erilaisiin alustoihin, ja oikein
+            tehtynä juotos kestää vuosia. Tehokas tapa estää veden tunkeutuminen rakenteisiin.
+          </p>
+          <div class="uses">
+            <div class="use">Asfalttihalkeamien paikkaaminen, kuten pihahalkeamat</div>
+            <div class="use">Seinänvierusta-aukeamien tiivistäminen</div>
+            <div class="use">Katukivien juottaminen</div>
+            <div class="use">Kalliosaumaukset</div>
+            <div class="use">Pysäkkien ja piha-alueiden reunakivityöt</div>
+          </div>
+        </div>
+        <div class="method-img reveal d1">
+          <img src="img/bitumi-sauma.jpg" loading="lazy" alt="Kuumabitumijuotoksella korjattu valmis sauma asfaltissa"
+               onerror="this.parentElement.style.background='var(--ink-2)';this.remove()">
+        </div>
+      </div>
+
+      <div class="process">
+        <div class="tiles process-grid">
+          <div class="pcard reveal">
+            <div class="pcard-img"><img src="img/halkeama-ennen.jpg" loading="lazy" alt="Korjattavissa oleva asfalttihalkeama" onerror="this.remove()"></div>
+            <div class="pcard-cap"><strong>Vaihe 1</strong> — Korjattavissa oleva halkeama. Korjaamatta halkeama laajenee ja vaurioittaa asfalttia.</div>
+          </div>
+          <div class="pcard reveal d1">
+            <div class="pcard-img"><img src="img/paineilma-puhallus.jpg" loading="lazy" alt="Halkeaman puhdistus paineilmalla" onerror="this.remove()"></div>
+            <div class="pcard-cap"><strong>Vaihe 2</strong> — Halkeama puhdistetaan huolella paineilmalla. Näin varmistetaan bitumin tarttuminen ja kestävä sauma.</div>
+          </div>
+          <div class="pcard reveal d2">
+            <div class="pcard-img"><img src="img/bitumi-sauma.jpg" loading="lazy" alt="Valmis bitumisauma" onerror="this.remove()"></div>
+            <div class="pcard-cap"><strong>Vaihe 3</strong> — Huolella puhdistettu halkeama täytetään asfaltin paksuudelta bitumilla.</div>
+          </div>
+        </div>
+        <div class="tiles two-img">
+          <div class="pcard reveal">
+            <div class="pcard-img"><img src="img/pysakki.jpg" loading="lazy" alt="Pysäkin reunakivet bitumijuotoksella viimeisteltynä" onerror="this.remove()"></div>
+            <div class="pcard-cap">Pysäkin reunakivet — bitumijuotos viimeistelee saumat kestävästi.</div>
+          </div>
+          <div class="pcard reveal d1">
+            <div class="pcard-img"><img src="img/kallio-liimaus.jpg" loading="lazy" alt="Kalliosaumaus bitumilla" onerror="this.remove()"></div>
+            <div class="pcard-cap">Kalliosaumaus — bitumin tarttuvuus toimii myös kalliopinnassa.</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- KUUMABITUMIJUOTOS -->
-  <section class="sec">
+  <!-- METHOD 02 — KUMIBITUMILISTA -->
+  <section class="method alt flip">
     <div class="container">
-
-      <div class="method-section">
-        <div class="section-label reveal">Menetelmä 01</div>
-        <div class="method-grid">
-          <div class="method-text">
-            <h2 class="section-h reveal d1"><span class="hl">Kuumabitumi</span><br>juotos.</h2>
-            <p class="reveal d2">
-              Kuumabitumijuotoksilla tarkoitetaan nestemäiseksi kuumennetun bitumin käyttämistä rakennekorjauksissa. Kuumennettu bitumi tarttuu hyvin erilaisiin alustoihin ja sillä on erinomainen tartuntakyky. Oikein tehtynä kuumabitumijuotos kestää vuosia.
-            </p>
-            <div class="method-uses reveal d3">
-              <div class="method-use-item">Asfalttihalkeamien paikkaaminen, kuten pihahalkeamat</div>
-              <div class="method-use-item">Seinänvierusta-aukeamien tiivistäminen</div>
-              <div class="method-use-item">Katukivien juottaminen</div>
-              <div class="method-use-item">Kalliosaumaukset</div>
-              <div class="method-use-item">Pysäkin ja piha-alueiden reunakivityöt</div>
-            </div>
-          </div>
-          <div class="reveal-right d1">
-            <div class="method-img-wrap">
-              <img src="https://www.bbitumi.fi/files/bbitumi.palvelee.fi/Bitumi_sauma"
-                   alt="Kuumabitumijuotos – valmis sauma"
-                   onerror="this.style.background='linear-gradient(135deg,#1a1508,#0d0d0d)';this.removeAttribute('src')">
-            </div>
+      <span class="kicker reveal">Menetelmä 02</span>
+      <div class="method-grid">
+        <div class="method-text reveal">
+          <h2 class="h-sec">Kumibitumi<span class="mark">lista</span></h2>
+          <p>
+            Kumibitumilista on bitumista valmistettu kolmion muotoinen tiiviste, jolla tiivistetään
+            leveämpiä asfaltin ja seinänvierustojen aukeamia. Lista muotoutuu saumakohteiden eri
+            muotoihin siististi, ja se voidaan viimeistellä erivärisin sirottein.
+          </p>
+          <div class="uses">
+            <div class="use">Seinänvierustojen tiivistäminen vesitiiviiksi</div>
+            <div class="use">Leveämpien aukeamien sulkeminen</div>
+            <div class="use">Porrasaskelmien saumakorjaukset</div>
+            <div class="use">Viimeistely erivärisin sirottein</div>
           </div>
         </div>
-
-        <!-- Prosessikuvat -->
-        <div class="process-grid">
-          <div class="process-card reveal">
-            <div class="process-img">
-              <img src="https://www.bbitumi.fi/files/bbitumi.palvelee.fi/kuvat/Uudet_kuvatUusi_kansio/WP_20140923_001.jpg"
-                   alt="Korjattavissa oleva halkeama"
-                   onerror="this.style.background='#1a1a1a';this.removeAttribute('src')">
-            </div>
-            <div class="process-caption"><strong style="color:var(--cream)">Vaihe 1</strong> — Korjattavissa oleva halkeama. Korjaamatta halkeama laajenee ja vaurioittaa asfalttia.</div>
-          </div>
-          <div class="process-card reveal d1">
-            <div class="process-img">
-              <img src="https://www.bbitumi.fi/files/bbitumi.palvelee.fi/Paineilma_puhallus"
-                   alt="Paineilmapuhdistus"
-                   onerror="this.style.background='#1a1a1a';this.removeAttribute('src')">
-            </div>
-            <div class="process-caption"><strong style="color:var(--cream)">Vaihe 2</strong> — Halkeama puhdistetaan huolella paineilmalla. Näin varmistetaan bitumin tarttuminen ja saumasta tulee kestävä.</div>
-          </div>
-          <div class="process-card reveal d2">
-            <div class="process-img">
-              <img src="https://www.bbitumi.fi/files/bbitumi.palvelee.fi/Bitumi_sauma"
-                   alt="Valmis bitumisauma"
-                   onerror="this.style.background='#1a1a1a';this.removeAttribute('src')">
-            </div>
-            <div class="process-caption"><strong style="color:var(--cream)">Vaihe 3</strong> — Vain huolella puhdistettu halkeama täyttyy asfaltin paksuudelta bitumilla.</div>
-          </div>
-        </div>
-
-        <div class="two-img">
-          <div class="process-card reveal">
-            <div class="process-img">
-              <img src="https://www.bbitumi.fi/files/bbitumi.palvelee.fi/Pysakki"
-                   alt="Pysäkin reunakivet"
-                   onerror="this.style.background='#1a1a1a';this.removeAttribute('src')">
-            </div>
-            <div class="process-caption">Pysäkin reunakivet — bitumijuotos viimeistelee saumat kestävästi.</div>
-          </div>
-          <div class="process-card reveal d1">
-            <div class="process-img">
-              <img src="https://www.bbitumi.fi/files/bbitumi.palvelee.fi/Kallio_liimaus"
-                   alt="Kalliosaumaus"
-                   onerror="this.style.background='#1a1a1a';this.removeAttribute('src')">
-            </div>
-            <div class="process-caption">Kalliosaumaus — bitumin tarttuvuus toimii myös kalliopinnassa.</div>
-          </div>
+        <div class="method-img reveal d1">
+          <img src="img/hitsattava-holkka.jpg" loading="lazy" alt="Seinänvierusta tiivistetty kumibitumilistalla"
+               onerror="this.parentElement.style.background='var(--ink-2)';this.remove()">
         </div>
       </div>
 
-      <!-- KUMIBITUMILISTA -->
-      <div class="method-section">
-        <div class="section-label reveal">Menetelmä 02</div>
-        <div class="method-grid flip">
-          <div class="method-text">
-            <h2 class="section-h reveal d1">Kumibitumi<span class="hl">lista.</span></h2>
-            <p class="reveal d2">
-              Kumibitumilista on bitumista valmistettu kolmion muotoinen tiiviste, jolla voidaan tiivistää erilaisia leveämpiä asfaltin ja seinänvierustojen aukeamia. Lista muotoutuu saumakohteiden eri muotoihin siististi ja sitä voidaan viimeistellä erivärisin sirottein.
-            </p>
-            <div class="method-uses reveal d3">
-              <div class="method-use-item">Seinänvierustojen tiivistäminen vesitiiviiksi</div>
-              <div class="method-use-item">Leveämpien aukeamien sulkeminen</div>
-              <div class="method-use-item">Porrasaskelmien saumakorjaukset</div>
-              <div class="method-use-item">Viimeistely erivärisin sirottein</div>
-            </div>
+      <div class="process">
+        <div class="tiles process-grid">
+          <div class="pcard reveal">
+            <div class="pcard-img"><img src="img/holkkanauha.jpg" loading="lazy" alt="Kolmion muotoinen kumibitumitiiviste" onerror="this.remove()"></div>
+            <div class="pcard-cap">Kolmion muotoinen kumibitumitiiviste — soveltuu erilevyisiin saumoihin.</div>
           </div>
-          <div class="reveal-left d1">
-            <div class="method-img-wrap">
-              <img src="https://www.bbitumi.fi/files/bbitumi.palvelee.fi/Hitsattava_holkka"
-                   alt="Seinänvierusta tiivistetty kumibitumilla"
-                   onerror="this.style.background='linear-gradient(135deg,#0e1828,#0d0d0d)';this.removeAttribute('src')">
-            </div>
+          <div class="pcard reveal d1">
+            <div class="pcard-img"><img src="img/holkan-juotos.jpg" loading="lazy" alt="Kumibitumilistalla tiivistetyt seinänvierustat" onerror="this.remove()"></div>
+            <div class="pcard-cap">Kumibitumilistalla tiivistetään seinänvierustat vesitiiviiksi.</div>
           </div>
-        </div>
-
-        <div class="process-grid" style="margin-top:40px;">
-          <div class="process-card reveal">
-            <div class="process-img">
-              <img src="https://www.bbitumi.fi/Kotisivukone/files/bbitumi.palvelee.fi/holkkanauha2.jpg"
-                   alt="Kolmion muotoinen kumibitumitiiviste"
-                   onerror="this.style.background='#1a1a1a';this.removeAttribute('src')">
-            </div>
-            <div class="process-caption">Kolmion muotoinen kumibitumitiiviste — soveltuu erileveisiin saumoihin.</div>
-          </div>
-          <div class="process-card reveal d1">
-            <div class="process-img">
-              <img src="https://www.bbitumi.fi/files/bbitumi.palvelee.fi/Holkan_juotos"
-                   alt="Kumibitumilistalla tiivistetyt seinänvierustat"
-                   onerror="this.style.background='#1a1a1a';this.removeAttribute('src')">
-            </div>
-            <div class="process-caption">Kumibitumilistalla tiivistetään seinänvierustat vesitiiviiksi.</div>
-          </div>
-          <div class="process-card reveal d2">
-            <div class="process-img">
-              <img src="https://www.bbitumi.fi/files/bbitumi.palvelee.fi/Hitsattava_holkka"
-                   alt="Valmis seinänvierustatiivistys"
-                   onerror="this.style.background='#1a1a1a';this.removeAttribute('src')">
-            </div>
-            <div class="process-caption">Seinänvierusta tiivistetty joustavalla kumibitumilistalla. Sauma voidaan viimeistellä erivärisin sirottein.</div>
+          <div class="pcard reveal d2">
+            <div class="pcard-img"><img src="img/hitsattava-holkka.jpg" loading="lazy" alt="Valmis seinänvierustatiivistys kumibitumilistalla" onerror="this.remove()"></div>
+            <div class="pcard-cap">Valmis seinänvierustatiivistys. Sauma voidaan viimeistellä erivärisin sirottein.</div>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="cta-band">
+  <section class="cta">
+    <div class="hazard"></div>
     <div class="container">
-      <div class="cta-inner">
-        <div class="section-label reveal">Ota yhteyttä</div>
-        <h2 class="section-h reveal d1">Tarvitsetko <span class="hl">bitumityön?</span></h2>
-        <p class="section-p reveal d2">Ilmainen arvio kohteellesi — 24h sisällä. Koko Etelä-Suomi.</p>
-        <div class="cta-btns reveal d3">
-          <a href="mailto:juha_valiviita@hotmail.com" class="btn-primary">
-            Pyydä tarjous
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <div class="cta-inner center">
+        <span class="kicker">Ota yhteyttä</span>
+        <h2 class="h-sec reveal">Tarvitsetko <span class="mark">bitumityön?</span></h2>
+        <p class="lead reveal d1">Maksuton arvio kohteellesi — vastaamme 24 tunnin sisällä. Koko Uusimaa ja Etelä-Suomi.</p>
+        <div class="cta-btns reveal d2">
+          <a href="tel:+358404802955" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            Soita 040 480 2955
           </a>
-          <a href="tel:+358404802955" class="btn-ghost">040 480 2955</a>
+          <a href="mailto:juha_valiviita@hotmail.com?subject=Tarjouspyynt%C3%B6%20%E2%80%93%20bitumity%C3%B6" class="btn btn-ghost">Lähetä kuvat kohteesta</a>
         </div>
-        <div class="cta-contacts reveal d4">
-          <div class="cc-item"><div class="cc-label">Sähköposti</div><a href="mailto:juha_valiviita@hotmail.com" class="cc-val">juha_valiviita@hotmail.com</a></div>
-          <div class="cc-item"><div class="cc-label">Puhelin</div><a href="tel:+358404802955" class="cc-val">040 480 2955</a></div>
-          <div class="cc-item"><div class="cc-label">Toimialue</div><div class="cc-val">Etelä-Suomi</div></div>
+        <div class="cta-direct reveal d3">
+          <a class="cd" href="tel:+358404802955" aria-label="Soita numeroon 040 480 2955">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            <span><span class="cd-label">Puhelin</span><span class="cd-val">040 480 2955</span></span>
+          </a>
+          <a class="cd" href="mailto:juha_valiviita@hotmail.com" aria-label="Lähetä sähköpostia">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg>
+            <span><span class="cd-label">Sähköposti</span><span class="cd-val sm">juha_valiviita@hotmail.com</span></span>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo" aria-label="B. Bitumi Oy — etusivu"><img src="bitumi-logo.png" alt="B. Bitumi Oy"></a>
+          <img src="bitumi-logo.png" alt="B. Bitumi Oy" />
           <p>B. Bitumi Oy korjaa bitumi- ja asfalttikohteet Uudellamaalla ja Etelä-Suomessa. Yli 20 vuoden käytännön kokemus.</p>
         </div>
-        <div class="footer-col"><h6>Palvelut</h6><ul>
-          <li><a href="kuntokartoitukset.html">Kuntokartoitukset</a></li>
-          <li><a href="bitumi.html">Kuumabitumijuotokset</a></li>
-          <li><a href="bitumi.html">Asfalttihalkeamat</a></li>
-          <li><a href="bitumi.html">Vedeneristys</a></li>
-        </ul></div>
-        <div class="footer-col"><h6>Yritys</h6><ul>
-          <li><a href="yritys.html">Yritysesittely</a></li>
-          <li><a href="kuvat.html">Kuvat</a></li>
-          <li><a href="yhteystiedot.html">Yhteystiedot</a></li>
-        </ul></div>
-        <div class="footer-col"><h6>Yhteystiedot</h6><ul>
-          <li><a href="mailto:juha_valiviita@hotmail.com">juha_valiviita@hotmail.com</a></li>
-          <li><a href="tel:+358404802955">040 480 2955</a></li>
-          <li><a href="#">Liekokuja 5b, 01300 Vantaa</a></li>
-        </ul></div>
+        <div class="footer-col">
+          <h5>Palvelut</h5>
+          <a href="bitumi.html">Kuumabitumijuotokset</a>
+          <a href="bitumi.html">Kumibitumilista</a>
+          <a href="kuntokartoitukset.html">Kuntokartoitukset</a>
+          <a href="kuntokartoitukset.html">Halkeamakorjaukset</a>
+        </div>
+        <div class="footer-col">
+          <h5>Yritys</h5>
+          <a href="yritys.html">Yritysesittely</a>
+          <a href="kuvat.html">Työmaakuvat</a>
+          <a href="yhteystiedot.html">Yhteystiedot</a>
+        </div>
+        <div class="footer-col">
+          <h5>Yhteystiedot</h5>
+          <p>Juha Väliviita</p>
+          <a href="tel:+358404802955">040 480 2955</a>
+          <a href="mailto:juha_valiviita@hotmail.com">juha_valiviita@hotmail.com</a>
+          <p>Liekokuja 5b, 01300 Vantaa</p>
+          <p>Y-tunnus 2613792-9</p>
+        </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 <span class="acc">B. Bitumi Oy</span>. Kaikki oikeudet pidätetään.</p>
-        <p>Y-tunnus 2613792-9</p>
+        <p>&copy; 2025 B. Bitumi Oy. Kaikki oikeudet pidätetään.</p>
+        <p>Bitumi- ja infrakorjaukset · Uusimaa &amp; Etelä-Suomi</p>
       </div>
     </div>
   </footer>
 
   <script>
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20), {passive:true});
-    const ham = document.getElementById('ham'), mob = document.getElementById('mobMenu');
-    ham.addEventListener('click', () => { ham.classList.toggle('open'); mob.classList.toggle('open'); });
-    mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { ham.classList.remove('open'); mob.classList.remove('open'); }));
-    const ro = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);} }), {threshold:.1,rootMargin:'0px 0px -50px 0px'});
-    document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => ro.observe(el));
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 16);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    const burger = document.getElementById('burger'), mobile = document.getElementById('mobile');
+    burger.addEventListener('click', () => {
+      const open = burger.classList.toggle('open');
+      mobile.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? 'Sulje valikko' : 'Avaa valikko');
+    });
+    mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      burger.classList.remove('open'); mobile.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    }));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   </script>
 </body>
 </html>

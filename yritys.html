@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="B. Bitumi Oy – Vantaalainen bitumi- ja infrakorjausyritys. Yli 20 vuoden kokemus, ammattipätevyydet, laadukas toteutus." />
+  <meta name="description" content="B. Bitumi Oy on Vantaalainen bitumi- ja infrakorjausyritys. Yli 20 vuoden kokemus, kaikki alan pätevyydet ja Luotettava Kumppani -status." />
   <title>Yritys — B. Bitumi Oy, Vantaa | yli 20 vuoden kokemus</title>
   <link rel="icon" href="bitumi-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,305 +11,255 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    .yritys-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
+    .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: start; }
+    .about-text p { color: var(--text-dim); margin-top: 16px; }
+    .signature { margin-top: 32px; padding-top: 26px; border-top: 1px solid var(--line); }
+    .signature-name { font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; text-transform: uppercase; }
+    .signature-title { font-size: 0.85rem; color: var(--text-dim); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 2px; }
 
-    .yritys-text p {
-      font-size: 1.05rem;
-      color: var(--muted);
-      line-height: 1.85;
-      font-weight: 300;
-      margin-top: 20px;
+    .certs { display: flex; flex-direction: column; }
+    .cert {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 22px 0; border-bottom: 1px solid var(--line);
     }
-
-    .yritys-text .signature {
-      margin-top: 40px;
-      padding-top: 32px;
-      border-top: 1px solid var(--border);
-    }
-    .yritys-text .signature-name {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--cream);
-    }
-    .yritys-text .signature-title {
-      font-size: .8rem;
-      color: var(--muted);
-      margin-top: 4px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .certs-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-    .cert-item {
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-      padding: 24px 0;
-      border-bottom: 1px solid var(--border);
-      transition: padding-left var(--t);
-    }
-    .cert-item:first-child { border-top: 1px solid var(--border); }
-    .cert-item:hover { padding-left: 6px; }
+    .cert:first-child { border-top: 1px solid var(--line); }
     .cert-ico {
-      width: 40px; height: 40px; min-width: 40px;
-      background: var(--accent-dim);
-      border: 1px solid var(--border-warm);
-      border-radius: 8px;
+      width: 42px; height: 42px; min-width: 42px;
+      color: var(--accent); border: 2px solid var(--line-warm);
       display: flex; align-items: center; justify-content: center;
-      color: var(--accent);
     }
-    .cert-body h4 {
-      font-family: var(--font-display);
-      font-weight: 700; font-size: .95rem;
-      color: var(--cream); margin-bottom: 5px;
-    }
-    .cert-body p { font-size: .85rem; color: var(--muted); line-height: 1.6; }
+    .cert-ico svg { width: 22px; height: 22px; }
+    .cert h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; text-transform: uppercase; line-height: 1.1; }
+    .cert p { font-size: 0.9rem; color: var(--text-dim); margin-top: 3px; }
 
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      overflow: hidden;
-      margin-top: 80px;
+    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 64px; }
+    .stat { text-align: left; }
+    .stat-num {
+      font-family: var(--font-display); font-weight: 800;
+      font-size: 3.2rem; line-height: 1; color: var(--accent);
     }
-    .stat-box {
-      background: var(--bg2);
-      padding: 44px 36px;
-      text-align: center;
-      transition: background var(--t);
-    }
-    .stat-box:hover { background: #202020; }
-    .stat-box-num {
-      font-family: var(--font-display);
-      font-size: 3rem;
-      font-weight: 900;
-      color: var(--accent);
-      line-height: 1;
-      letter-spacing: -2px;
-      margin-bottom: 12px;
-    }
-    .stat-box-label { font-size: .85rem; color: var(--muted); line-height: 1.6; }
+    .stat-label { font-size: 0.95rem; color: var(--text-dim); margin-top: 10px; }
 
-    @media(max-width:768px) {
-      .yritys-grid { grid-template-columns:1fr; gap:48px; }
-      .stats-row { grid-template-columns:1fr; }
+    @media (max-width: 820px) {
+      .about-grid { grid-template-columns: 1fr; gap: 44px; }
+      .stat-row { grid-template-columns: 1fr; gap: 2px; }
     }
   </style>
 </head>
 <body>
 
-  <nav class="navbar" id="navbar">
+  <nav class="nav" id="nav">
     <div class="container nav-inner">
-      <a href="index.html" class="logo" aria-label="B. Bitumi Oy — etusivu"><img src="bitumi-logo.png" alt="B. Bitumi Oy"></a>
+      <a href="index.html" class="brand" aria-label="B. Bitumi Oy — etusivu"><img src="bitumi-logo.png" alt="B. Bitumi Oy"></a>
       <div class="nav-links">
         <a href="index.html">Etusivu</a>
         <a href="kuntokartoitukset.html">Kuntokartoitukset</a>
         <a href="bitumi.html">Bitumi</a>
+        <a href="kuvat.html">Kuvat</a>
+        <a href="yritys.html" aria-current="page">Yritys</a>
         <a href="yhteystiedot.html">Yhteystiedot</a>
-        <a href="yritys.html" class="active">Yritys</a>
-        <a href="yhteystiedot.html" class="nav-cta">Pyydä arvio</a>
+        <a href="tel:+358404802955" class="nav-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+          040 480 2955
+        </a>
       </div>
-      <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
+      <button class="burger" id="burger" aria-label="Avaa valikko" aria-expanded="false" aria-controls="mobile"><span></span><span></span><span></span></button>
     </div>
   </nav>
-  <div class="mob-menu" id="mobMenu">
+  <div class="mobile" id="mobile">
     <a href="index.html">Etusivu</a>
     <a href="kuntokartoitukset.html">Kuntokartoitukset</a>
     <a href="bitumi.html">Bitumi</a>
-    <a href="yhteystiedot.html">Yhteystiedot</a>
-    <a href="yritys.html" class="active">Yritys</a>
     <a href="kuvat.html">Kuvat</a>
-    <a href="yhteystiedot.html" class="mob-cta">Pyydä arvio</a>
+    <a href="yritys.html" aria-current="page">Yritys</a>
+    <a href="yhteystiedot.html">Yhteystiedot</a>
+    <a href="tel:+358404802955" class="m-cta">Soita 040 480 2955</a>
   </div>
 
   <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="page-hero-bg" aria-hidden="true">YRITYS</div>
-    <div class="container">
-      <div class="breadcrumb reveal"><a href="index.html">Etusivu</a><span class="sep">/</span><span>Yritys</span></div>
-      <h1 class="reveal d1">B. Bitumi <span class="hl">Oy.</span></h1>
-      <p class="page-hero-sub reveal d2">Vantaalainen erikoisbitumiyritys — yli 20 vuoden kokemus ja kaikki alan pätevyydet.</p>
+  <header class="page-hero" data-ghost="YRITYS">
+    <div class="container page-hero-inner">
+      <nav class="breadcrumb" aria-label="Murupolku">
+        <a href="index.html">Etusivu</a><span class="sep">/</span><span>Yritys</span>
+      </nav>
+      <h1>B. Bitumi <span class="mark">Oy</span></h1>
+      <p class="page-hero-sub">Vantaalainen erikoisbitumiyritys — yli 20 vuoden kokemus ja kaikki alan pätevyydet.</p>
     </div>
-  </section>
+    <div class="hazard"></div>
+  </header>
 
-  <!-- ABOUT SECTION -->
-  <section class="sec">
+  <!-- ABOUT -->
+  <section>
     <div class="container">
-      <div class="yritys-grid">
-
-        <div class="yritys-text">
-          <div class="section-label reveal">Meistä</div>
-          <h2 class="section-h reveal d1" style="max-width:100%;">
-            Laatu, kokemus<br>ja <span class="hl">ammattitaito.</span>
-          </h2>
-          <p class="reveal d2">
-            B. Bitumi on Vantaalainen yritys, joka tarjoaa alan parasta palvelua ja laatua yrityksille ja yksityishenkilöille. Yrityksen henkilökunnalla on yli 20 vuoden kokemus alalta.
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <span class="kicker">Meistä</span>
+          <h2 class="h-sec">Laatu, kokemus ja <span class="mark">ammattitaito</span></h2>
+          <p>
+            B. Bitumi Oy on Vantaalainen yritys, joka tarjoaa alan palvelua ja laatua yrityksille
+            ja yksityishenkilöille. Yrityksen henkilökunnalla on yli 20 vuoden kokemus alalta.
           </p>
-          <p class="reveal d3">
-            Koulutamme jatkuvasti henkilökuntaa, jotta osaaminen pysyisi aina ajan tasalla. Henkilökunnalta löytyvät kaikki töissä vaadittavat pätevyydet ja kurssit — tulityö-, tieturva-, työturvallisuus- ja ensiapukurssit — työn tehokkaan, laadukkaan ja lainmukaisen tekemisen varmistamiseksi.
+          <p>
+            Koulutamme jatkuvasti henkilökuntaa, jotta osaaminen pysyy aina ajan tasalla.
+            Henkilökunnalta löytyvät kaikki töissä vaadittavat pätevyydet ja kurssit — tulityö-,
+            tieturva-, työturvallisuus- ja ensiapukurssit — työn tehokkaan, laadukkaan ja
+            lainmukaisen tekemisen varmistamiseksi.
           </p>
-          <p class="reveal d4">
-            Käytämme vain hyväksi havaittuja ja testattuja työmenetelmiä ja materiaaleja, jotta voimme olla varmoja työnlaadusta.
+          <p>
+            Käytämme vain hyväksi havaittuja ja testattuja työmenetelmiä ja materiaaleja, jotta
+            voimme olla varmoja työn laadusta.
           </p>
-
-          <div class="signature reveal d5">
+          <div class="signature">
             <div class="signature-name">Juha Väliviita</div>
             <div class="signature-title">Toimitusjohtaja, B. Bitumi Oy</div>
           </div>
         </div>
 
-        <div>
-          <div class="section-label reveal-right">Pätevyydet &amp; sertifikaatit</div>
-          <div class="certs-grid" style="margin-top:24px;">
-
-            <div class="cert-item reveal-right d1">
-              <div class="cert-ico">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div class="cert-body">
-                <h4>Luotettava Kumppani</h4>
-                <p>Mukana tilaajavastuu.fi:n Luotettava Kumppani -ohjelmassa. Kaikki lakisääteiset velvollisuudet hoidettu.</p>
+        <div class="reveal d1">
+          <span class="kicker">Pätevyydet &amp; sertifikaatit</span>
+          <div class="certs">
+            <div class="cert">
+              <div class="cert-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>
+              <div>
+                <h3>Luotettava Kumppani</h3>
+                <p>Mukana tilaajavastuu.fi:n Luotettava Kumppani -ohjelmassa. Lakisääteiset velvollisuudet hoidettu.</p>
               </div>
             </div>
-
-            <div class="cert-item reveal-right d2">
-              <div class="cert-ico">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
-              <div class="cert-body">
-                <h4>Tulityökortti</h4>
-                <p>Voimassaoleva tulityökortti — edellytys kuumabitumimassojen turvalliseen käsittelyyn.</p>
+            <div class="cert">
+              <div class="cert-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg></div>
+              <div>
+                <h3>Tulityökortti</h3>
+                <p>Voimassa oleva tulityökortti — edellytys kuumabitumimassojen turvalliseen käsittelyyn.</p>
               </div>
             </div>
-
-            <div class="cert-item reveal-right d3">
-              <div class="cert-ico">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div class="cert-body">
-                <h4>Tieturvakortti</h4>
+            <div class="cert">
+              <div class="cert-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-5-7-11a7 7 0 0 1 14 0c0 6-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+              <div>
+                <h3>Tieturva 1</h3>
                 <p>Tieturva 1 -pätevyys turvalliseen työskentelyyn liikennealueilla ja kaduilla.</p>
               </div>
             </div>
-
-            <div class="cert-item reveal-right d4">
-              <div class="cert-ico">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              </div>
-              <div class="cert-body">
-                <h4>Työturvallisuuskortti</h4>
-                <p>Voimassaoleva työturvallisuuskortti kaikilla työmaille menevällä henkilökunnalla.</p>
+            <div class="cert">
+              <div class="cert-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.5V12a10 10 0 1 1-5.9-9.1"/><path d="M22 4 12 14l-3-3"/></svg></div>
+              <div>
+                <h3>Työturvallisuuskortti</h3>
+                <p>Voimassa oleva työturvallisuuskortti kaikilla työmaalle menevällä henkilökunnalla.</p>
               </div>
             </div>
-
-            <div class="cert-item reveal-right d5">
-              <div class="cert-ico">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-              </div>
-              <div class="cert-body">
-                <h4>Ensiapukoulutus</h4>
+            <div class="cert">
+              <div class="cert-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 12h-4l-3 8L9 4l-3 8H2"/></svg></div>
+              <div>
+                <h3>Ensiapukoulutus</h3>
                 <p>EA1-tasoinen ensiapukoulutus — turvallisuus on osa jokaista työmaata.</p>
               </div>
             </div>
-
           </div>
         </div>
       </div>
 
-      <!-- Stats row -->
-      <div class="stats-row">
-        <div class="stat-box reveal">
-          <div class="stat-box-num">20+</div>
-          <div class="stat-box-label">Vuotta kokemusta bitumi- ja infrakorjauksista</div>
+      <div class="stat-row tiles">
+        <div class="tile stat reveal">
+          <div class="stat-num">20+</div>
+          <div class="stat-label">Vuotta kokemusta bitumi- ja infrakorjauksista</div>
         </div>
-        <div class="stat-box reveal d1">
-          <div class="stat-box-num">24/7</div>
-          <div class="stat-box-label">Päivystysvalmius hätäkorjauksia varten</div>
+        <div class="tile stat reveal d1">
+          <div class="stat-num">24/7</div>
+          <div class="stat-label">Päivystysvalmius vuoto- ja hätäkorjauksiin</div>
         </div>
-        <div class="stat-box reveal d2">
-          <div class="stat-box-num">100%</div>
-          <div class="stat-box-label">Aidolla ammattikalustolla toteutetut työmaat</div>
+        <div class="tile stat reveal d2">
+          <div class="stat-num">Oma</div>
+          <div class="stat-label">Ammattikalusto bitumitöihin — ei alihankinnan varassa</div>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="cta-band">
+  <section class="cta">
+    <div class="hazard"></div>
     <div class="container">
-      <div class="cta-inner">
-        <div class="section-label reveal">Ota yhteyttä</div>
-        <h2 class="section-h reveal d1">Yhteistyö <span class="hl">alkaa tästä.</span></h2>
-        <p class="section-p reveal d2">Pyydä tarjous kohteellesi — vastataan 24h sisällä.</p>
-        <div class="cta-btns reveal d3">
-          <a href="mailto:juha_valiviita@hotmail.com" class="btn-primary">
-            Ota yhteyttä
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <div class="cta-inner center">
+        <span class="kicker">Ota yhteyttä</span>
+        <h2 class="h-sec reveal">Yhteistyö <span class="mark">alkaa tästä</span></h2>
+        <p class="lead reveal d1">Maksuton arvio kohteellesi — vastaamme 24 tunnin sisällä. Koko Uusimaa ja Etelä-Suomi.</p>
+        <div class="cta-btns reveal d2">
+          <a href="tel:+358404802955" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            Soita 040 480 2955
           </a>
-          <a href="tel:+358404802955" class="btn-ghost">040 480 2955</a>
+          <a href="mailto:juha_valiviita@hotmail.com" class="btn btn-ghost">Lähetä sähköposti</a>
         </div>
-        <div class="cta-contacts reveal d4">
-          <div class="cc-item"><div class="cc-label">Sähköposti</div><a href="mailto:juha_valiviita@hotmail.com" class="cc-val">juha_valiviita@hotmail.com</a></div>
-          <div class="cc-item"><div class="cc-label">Puhelin</div><a href="tel:+358404802955" class="cc-val">040 480 2955</a></div>
-          <div class="cc-item"><div class="cc-label">Toimialue</div><div class="cc-val">Etelä-Suomi</div></div>
+        <div class="cta-direct reveal d3">
+          <a class="cd" href="tel:+358404802955" aria-label="Soita numeroon 040 480 2955">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            <span><span class="cd-label">Puhelin</span><span class="cd-val">040 480 2955</span></span>
+          </a>
+          <a class="cd" href="mailto:juha_valiviita@hotmail.com" aria-label="Lähetä sähköpostia">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg>
+            <span><span class="cd-label">Sähköposti</span><span class="cd-val sm">juha_valiviita@hotmail.com</span></span>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo" aria-label="B. Bitumi Oy — etusivu"><img src="bitumi-logo.png" alt="B. Bitumi Oy"></a>
+          <img src="bitumi-logo.png" alt="B. Bitumi Oy" />
           <p>B. Bitumi Oy korjaa bitumi- ja asfalttikohteet Uudellamaalla ja Etelä-Suomessa. Yli 20 vuoden käytännön kokemus.</p>
         </div>
-        <div class="footer-col"><h6>Palvelut</h6><ul>
-          <li><a href="kuntokartoitukset.html">Kuntokartoitukset</a></li>
-          <li><a href="bitumi.html">Kuumabitumijuotokset</a></li>
-          <li><a href="bitumi.html">Asfalttihalkeamat</a></li>
-          <li><a href="bitumi.html">Vedeneristys</a></li>
-        </ul></div>
-        <div class="footer-col"><h6>Yritys</h6><ul>
-          <li><a href="yritys.html">Yritysesittely</a></li>
-          <li><a href="kuvat.html">Kuvat</a></li>
-          <li><a href="yhteystiedot.html">Yhteystiedot</a></li>
-        </ul></div>
-        <div class="footer-col"><h6>Yhteystiedot</h6><ul>
-          <li><a href="mailto:juha_valiviita@hotmail.com">juha_valiviita@hotmail.com</a></li>
-          <li><a href="tel:+358404802955">040 480 2955</a></li>
-          <li><a href="#">Liekokuja 5b, 01300 Vantaa</a></li>
-        </ul></div>
+        <div class="footer-col">
+          <h5>Palvelut</h5>
+          <a href="bitumi.html">Kuumabitumijuotokset</a>
+          <a href="bitumi.html">Kumibitumilista</a>
+          <a href="kuntokartoitukset.html">Kuntokartoitukset</a>
+          <a href="kuntokartoitukset.html">Halkeamakorjaukset</a>
+        </div>
+        <div class="footer-col">
+          <h5>Yritys</h5>
+          <a href="yritys.html">Yritysesittely</a>
+          <a href="kuvat.html">Työmaakuvat</a>
+          <a href="yhteystiedot.html">Yhteystiedot</a>
+        </div>
+        <div class="footer-col">
+          <h5>Yhteystiedot</h5>
+          <p>Juha Väliviita</p>
+          <a href="tel:+358404802955">040 480 2955</a>
+          <a href="mailto:juha_valiviita@hotmail.com">juha_valiviita@hotmail.com</a>
+          <p>Liekokuja 5b, 01300 Vantaa</p>
+          <p>Y-tunnus 2613792-9</p>
+        </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 <span class="acc">B. Bitumi Oy</span>. Kaikki oikeudet pidätetään.</p>
-        <p>Y-tunnus 2613792-9</p>
+        <p>&copy; 2025 B. Bitumi Oy. Kaikki oikeudet pidätetään.</p>
+        <p>Bitumi- ja infrakorjaukset · Uusimaa &amp; Etelä-Suomi</p>
       </div>
     </div>
   </footer>
 
   <script>
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20), {passive:true});
-    const ham = document.getElementById('ham'), mob = document.getElementById('mobMenu');
-    ham.addEventListener('click', () => { ham.classList.toggle('open'); mob.classList.toggle('open'); });
-    mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { ham.classList.remove('open'); mob.classList.remove('open'); }));
-    const ro = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);} }), {threshold:.1,rootMargin:'0px 0px -50px 0px'});
-    document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => ro.observe(el));
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 16);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    const burger = document.getElementById('burger'), mobile = document.getElementById('mobile');
+    burger.addEventListener('click', () => {
+      const open = burger.classList.toggle('open');
+      mobile.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? 'Sulje valikko' : 'Avaa valikko');
+    });
+    mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      burger.classList.remove('open'); mobile.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    }));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   </script>
 </body>
 </html>
