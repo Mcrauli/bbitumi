@@ -863,6 +863,20 @@
       body { padding-bottom: 60px; }
     }
     @media (max-width: 620px) {
+      /* Hero mobiilissa: kuva omaksi banneriksi ylös, teksti tasaiselle
+         pohjalle sen alle — täysleveä taustakuva näkyi pystynäytöllä
+         vain kapeana, oudosti skaalattuna siivuna */
+      .hero {
+        min-height: auto;
+        display: block;
+        padding-top: calc(104px + 64vw);
+        padding-bottom: 44px;
+      }
+      .hero-photo { height: calc(104px + 64vw); object-position: center 50%; }
+      .hero::before { bottom: auto; height: calc(104px + 64vw); }
+      .hero::after { top: calc(104px + 64vw - 6px); bottom: auto; }
+      .hero-inner { padding-bottom: 0; max-width: 100%; }
+
       .trust-grid { grid-template-columns: 1fr 1fr; }
       .trust-item:nth-child(2) { border-right: none; }
       .trust-item:nth-child(1), .trust-item:nth-child(2) { border-bottom: 1px solid var(--line); }
